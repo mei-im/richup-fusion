@@ -1,16 +1,42 @@
 version: '3.1'
 intents:
+# - greet
+# - goodbye
+# - affirm
+# - deny
+# - light_switch
+# - change_color
+
 - greet
 - goodbye
-- affirm
+- confirm
 - deny
-- light_switch
-- change_color
+- insert_name
+- create_room
+- choose_color 
+- information_house
+- start_game
+- roll_dice
+- end_turn
+- buy_house
+- leave_prison
+- give_up_game
+- close_game
+- list_of_colors
+- game_info
+- mute
+- unmute
+- close_information
+- show_properties
+
 entities:
-- place
-- switch
-- shape
+# - place
+# - switch
+# - shape
+- house
 - color
+- price
+- name
 slots:
   switch:
     type: text

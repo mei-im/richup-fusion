@@ -29,6 +29,9 @@ nlu:
     - Okay
     - Ok
     - sim
+    - sim, quero
+    - sim, por favor
+    - Confirmo
 
 - intent: deny
   examples: |
@@ -36,38 +39,275 @@ nlu:
     - Nope
     - Nunca
     - Acho que não
-    - Não gosto assim
     - Nem por isso
 
-- intent: light_switch
-  examples: |
-    - [Liga](switch) a luz da [sala](place), por favor
-    - Podes [ligar](switch) a luz da [cozinha](place)?
-    - Podes [desligar](switch) a luz do [quarto](place)?
-    - [Acende-me](switch) a luz da [entrada](place)
-    - [Apaga](switch) a luz do espelho(place)
-    - Podes [acender](switch) a luz da [casa de banho](place)?
-    - Podes [apagar](switch) a luz da [dispensa](place)?
-    - Podes [desligar](switch) a luz do [quarto e da casa de banho](place)?
-    - [Liga](switch) a luz da [sala](place)
-    - [Liga](switch) a luz do [quarto](place)
-    - [Desliga](switch) a luz do [quarto](place)
+# - intent: light_switch
+#   examples: |
+#     - [Liga](switch) a luz da [sala](place), por favor
+#     - Podes [ligar](switch) a luz da [cozinha](place)?
+#     - Podes [desligar](switch) a luz do [quarto](place)?
+#     - [Acende-me](switch) a luz da [entrada](place)
+#     - [Apaga](switch) a luz do espelho(place)
+#     - Podes [acender](switch) a luz da [casa de banho](place)?
+#     - Podes [apagar](switch) a luz da [dispensa](place)?
+#     - Podes [desligar](switch) a luz do [quarto e da casa de banho](place)?
+#     - [Liga](switch) a luz da [sala](place)
+#     - [Liga](switch) a luz do [quarto](place)
+#     - [Desliga](switch) a luz do [quarto](place)
 
-- intent: change_color
+# - intent: change_color
+#   examples: |
+#     - Mudar a cor do [quadrado](shape) para  [verde](color)
+#     - Mudar o [retangulo](shape) para  [vermelho](color)
+#     - Alterar a cor do [circulo](shape) para  [amarelo](color)
+#     - Mudar a cor do [quadrado](shape) para  [azul](color)
+#     - Alterar o [circulo](shape) para  [verde](color)
+#     - Mudar a cor do [triangulo](shape) para  [vermelho](color)
+#     - Por o [circulo](shape) em  [amarelo](color)
+#     - Mudar para [azul](color) o [triangulo](shape) 
+#     - Alterar para [amarelo](color) o [quadrado](shape)
+#     - Alterar o [circulo](shape) para  [castanho](color)
+#     - Mudar o [quadrado](shape) para  [cinzento](color)
+#     - Alterar o [triangulo](shape) para  [laranja](color)
+#     - Por a cor do [circulo](shape) em  [rosa](color)
+#     - Mudar a cor do [triangulo](shape) para  [preto](color)
+#     - Por o [circulo](shape) em  [branco](color)
+#     - Mudar para [azul](color) o [circulo](shape) 
+
+
+- intent: insert_name 
   examples: |
-    - Mudar a cor do [quadrado](shape) para  [verde](color)
-    - Mudar o [retangulo](shape) para  [vermelho](color)
-    - Alterar a cor do [circulo](shape) para  [amarelo](color)
-    - Mudar a cor do [quadrado](shape) para  [azul](color)
-    - Alterar o [circulo](shape) para  [verde](color)
-    - Mudar a cor do [triangulo](shape) para  [vermelho](color)
-    - Por o [circulo](shape) em  [amarelo](color)
-    - Mudar para [azul](color) o [triangulo](shape) 
-    - Alterar para [amarelo](color) o [quadrado](shape)
-    - Alterar o [circulo](shape) para  [castanho](color)
-    - Mudar o [quadrado](shape) para  [cinzento](color)
-    - Alterar o [triangulo](shape) para  [laranja](color)
-    - Por a cor do [circulo](shape) em  [rosa](color)
-    - Mudar a cor do [triangulo](shape) para  [preto](color)
-    - Por o [circulo](shape) em  [branco](color)
-    - Mudar para [azul](color) o [circulo](shape) 
+    - O meu nome é [dani](name)
+    - O meu nome é [Maria](name)
+    - Insere o meu nome como [mariana](name)
+    - Chamo me [Martini](name)
+    - Vou usar o nome [Maria12](name)
+    - Vou jogar com o nome [João](name)
+    - Vou utilizar o nickname [Julia](name)
+    - Quero jogar como [vasco](name)
+    - Vou jogar como [gui123](name)
+    - Jogar como [luis afonso](name)
+
+- intent: create_room
+  examples: |
+    - Jogo privado
+    - Criar um jogo privado
+    - Criar jogo privado
+    - Criar jogo
+    - Criar um jogo
+    - Quero criar um jogo
+    - Quero criar um jogo privado
+    - Quero criar uma sala
+    - Quero criar uma sala privada
+    - Criar sala privada
+    - Criar sala
+    - Criar uma sala
+    - Criar uma sala privada
+    - Criar uma sala privada para jogar
+    - Criar uma sala para jogar
+
+- intent: choose_color
+  examples: |
+    - Quero ser o [vermelho](color)
+    - Quero a cor [amarela](color)
+    - Quero jogar com a cor [magenta](color)
+    - Eu escolho o [pink](color)
+    - Jogo com [azul](color)
+    - Escolho a cor [vermelho](color)
+    - Escolho o [lima](color)
+    - Quero jogar como [rosa](color)
+    - Eu sou o [vermelho](color)
+    - Jogo como [green](color)
+    - cor [vermelho](color)
+    - Mudar para [vermelho](color)
+    - Mudar para a cor [yellow](color)
+    - Quero a cor [blue](color)
+    - Quero manter a cor [blue](color)
+
+
+- intent: information_house
+  examples: |
+    - Mostra-me [rio](house)
+    - Mostra-me as informações da propriedade [tlv airport](house)
+    - Mostra-me a casa [salvador](house)
+    - Mostra-me a propriedade [tlv airport](house)
+    - Informação sobre [london](house)
+    - Quero saber mais sobre [new york](house)
+    - Ver [berlin](house)
+    - Ver detalhes de [munich](house)
+    - Ver detalhes da casa [frankfurt](house)
+    - Ver detalhes da propriedade [muc airport](house)
+    - Ver casa de [milan](house)
+    - Ver propriedade [Venice](house)
+    - Quanto custa a casa [São Francisco](house)
+    - Quanto custa a propriedade [liverpool](house)
+    - Quanto vale a casa [manchester](house)
+    - Quanto vale a propriedade [london](house)
+    - Quanto vale [Paris](house)
+    - Quanto custa um hotel em [xangai](house)
+    - Quanto custa uma casa em [haifa](house)
+    - Quero saber o preço da casa [shenzhen](house)
+    - Quero saber o preço da propriedade [beijing](house)
+    - Quanto vou pagar naquela casa em [shanghai](house)
+    - Quanto vou pagar naquela propriedade em [cdg airport](house)
+    - Abrir [tlv airport](house)
+
+- intent: start_game
+  examples: |
+    - Começar
+    - start 
+    - iniciar
+    - começar jogo 
+    - start jogo
+    - iniciar jogo
+    - iniciar o jogo
+    - Vamos começar
+    - Vamos começar o jogo
+
+- intent: roll_dice
+  examples: |
+    - Lança os dados
+    - Lança os dados, por favor
+    - Joga os dados
+    - Quero lançar os dados
+    - Manda os dados
+    - Lança
+    - Joga
+    - Faz o lançamento
+    - Faz a jogada
+    - Faz a minha jogada
+    - Rola os dados
+    - Atira os dados
+
+- intent: end_turn
+  examples: |
+    - Acabei a minha jogada
+    - Acabei a jogada
+    - Acabar jogada
+    - Próximo
+    - Próxima jogada
+    - Terminar jogada
+    - Terminar turn 
+    - Terminar ronda
+    - Proximo jogador
+    - Passo 
+    - Continuar jogo
+
+
+- intent: buy_house
+  examples: |
+    - Quero comprar a casa
+    - Quero a casa, por favor
+    - Quero comprar essa propriedade
+    - Quero a propriedade, por favor
+    - Vou comprar a casa
+    - Vou ficar com a casa
+    - Vou ficar com a propriedade
+    - Posso ficar com a casa
+    - Posso ficar com essa propriedade
+    - Fico com a casa
+    - Fico com a propriedade
+    - Compro a casa
+    - Compro a propriedade
+    - Compro
+    - Quero comprar
+    - Quero comprar esta casa 
+    - Pago o [140](price) pela casa
+    - Pago o [600](price) pela propriedade
+
+
+- intent: leave_prison
+  examples: |
+    - Pagar [50](price) para sair da prisão
+    - Pago para sair da prisão
+    - Quero pagar para sair da prisão
+    - Quero sair da prisão
+
+- intent: give_up_game
+  examples: |
+    - Desistir
+    - Desisto
+    - Quero desistir
+    - Quero desistir do jogo
+    - Quero desistir do jogo, por favor
+    - Estou falido
+    - Estou falido, desisto
+    - Estou falido, quero desistir
+    - Quero declarar falência
+    - Não quero jogar mais
+    - Quero parar de jogar
+
+
+- intent: close_game
+  examples: |
+    - Desligar
+    - Sair
+    - Terminar
+    - Terminar jogo
+    - Desligar jogo
+    - Sair do jogo
+    - Fechar jogo
+
+- intent: list_of_colors
+  examples: |
+    - Quais são as cores disponíveis?
+    - Quais são as cores?
+    - Quais são as cores que posso escolher?
+    - Quais são as cores que posso escolher para jogar?
+    - Posso escolher qualquer cor?
+    - Podes fornecer uma lista de cores?
+    - Podes fornecer uma lista de cores disponíveis?
+
+- intent: game_info
+  examples: |
+    - Como funciona o jogo?
+    - Não sei como jogar
+    - Quero saber como jogar
+    - Podes me explicar como jogar?
+    - Podes me explicar as regras do jogo?
+    - Quero saber as regras do jogo
+    - Quero saber as regras
+
+- intent: mute
+  examples: |
+    - Desligar o som
+    - Desligar o som do jogo
+    - Por favor, desliga o som por um bocado
+    - Não quero ouvir o som do jogo
+    - Coloca o som do jogo em silêncio
+    - Desliga o som por um tempo
+
+
+- intent: unmute
+  examples: |
+    - Ligar o som
+    - Ligar o som do jogo
+    - Por favor, ligar o som do jogo
+    - Quero ouvir o som do jogo
+    - Coloca o som do jogo
+    - Ligar o som
+    - Por favor, liga o som
+    - Quero ouvir o som do jogo
+    - Coloca o som do jogo
+    - Ative o som
+
+
+
+ # TODO IMPLEMENTAR
+- intent: close_information
+  examples: |
+  - Fechar
+  - Fechar informação
+  - Quero continuar a jogar
+  - Quero continuar a jogar, por favor
+  - Podes fechar a informação 
+
+
+- intent: show_properties
+  examples: |
+    - Mostra-me a informação da propriedade
+    - Mostra-me a informação da propriedade, por favor
+    - Mostra-me as informações da propriedade
+    - Mostra-me as informações da propriedade selecionada
+
+
