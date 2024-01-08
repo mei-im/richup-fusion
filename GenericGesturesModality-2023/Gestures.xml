@@ -1,0 +1,43 @@
+<!--This XML file contains the gestures of the database.-->
+<Gestures>
+  <Gesture>
+    <ID>0</ID>
+    <NAME>hand_left_shoulder_level_decrease</NAME>
+    <SEMANTIC>handleftshoulderleveldecrease</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>1</ID>
+    <NAME>hand_one_direction_roll_dice</NAME>
+    <SEMANTIC>handonedirectionrolldice</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>2</ID>
+    <NAME>hand_right_shoulder_level_increase</NAME>
+    <SEMANTIC>handrightshoulderlevelincrease</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>3</ID>
+    <NAME>hand_right_up_help</NAME>
+    <SEMANTIC>handrightuphelp</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>4</ID>
+    <NAME>hands_different_directions_close</NAME>
+    <SEMANTIC>handsdifferentdirectionsclose</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>5</ID>
+    <NAME>hands_front_select</NAME>
+    <SEMANTIC>handsfrontselect</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>6</ID>
+    <NAME>hands_join</NAME>
+    <SEMANTIC>handsjoin</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>7</ID>
+    <NAME>hands_up_give_up</NAME>
+    <SEMANTIC>handsupgiveup</SEMANTIC>
+  </Gesture>
+</Gestures>
