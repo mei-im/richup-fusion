@@ -312,6 +312,13 @@ async function InitializeKWS(){
     console.log("start");
   })
   
+  $(document).keypress(function(e) {
+    console.log(e.which);
+    if(e.which == 109) {
+      recognition.start();
+      console.log("start");
+    }
+  });
 
   var vadActive = false;
   var speechActive = true;
@@ -396,44 +403,25 @@ async function InitializeKWS(){
   var mmiCli_1 = null;
   mmiCli_1 = new MMIClient(null, mmi_fusion + "SPEECHIN");
 
-  function sendMMI(final_transcript){
+  function sendMMI(final_transcript) {
 
-var obj = new Object();
-obj.text = final_transcript;
-$.post( "http://127.0.0.1:5005/model/parse", JSON.stringify(obj), function( data ) {
-console.log(data);
+  var obj = new Object();
+  obj.text = final_transcript;
+  $.post("http://localhost:5005/model/parse", JSON.stringify(obj), function (data) {
+      console.log(data);
 
+      var messaget = btoa(unescape(encodeURIComponent(final_transcript)));
+      var result = { "recognized": ["SPEECH", "SPEECHIN", "APP"], "text": messaget, "nlu": JSON.stringify(data) };
+      mmiCli_1.sendToIM(new LifeCycleEvent("SPEECHIN", "IM", "text-1", "ctx-1").
+          doExtensionNotification(new EMMA("text-", "text", "command", 1, 0).
+              setValue(JSON.stringify(result))));
 
-if(data.intent.name=='change_color'){
-  var shape='' ;
-  var color='' ;
-
-  for (let i = 0; i < data.entities.length; i++)
-  {
-    if(data.entities[i].entity=='shape')
-      shape=data.entities[i].value.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    if(data.entities[i].entity=='color')
-      color=data.entities[i].value.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  });
   }
-
-  var message = {'intent':'change_color','shape':shape,'color':color}
-  var messaget = btoa(unescape(encodeURIComponent(final_transcript)));
-  var result = { "recognized" : ["SPEECH", "CHANGE_COLOR"], "text": messaget, "nlu": message };
-if(shape!="")
-result.recognized.push(shape);
-if(color!="")
-result.recognized.push(color);
-
-  mmiCli_1.sendToIM(new LifeCycleEvent("SPEECHIN", "IM", "text-1", "ctx-1").
-        doExtensionNotification(new EMMA("text-", "text", "command", 1, 0).
-        setValue(JSON.stringify(result))));
-}
-});
 
   /*
     
             */
-  }
  // sendMMI("mudar para verde o circulo");
   
 
