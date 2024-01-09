@@ -10,9 +10,9 @@ Start-Process -FilePath .\start.bat
 Set-Location -Path ..\WebApps_without_WakeUpWord\WebAppAssistantV2
 Start-Process -FilePath .\start_web_app.bat
 
-Set-Location -Path ..\
+Set-Location -Path ..\..\
 conda activate rasa-env
-Set-Location -Path ..\rasaDemo
+Set-Location -Path .\rasaDemo
 Start-Process -FilePath rasa -ArgumentList 'run', '--enable-api', '-m', '.\models\', '--cors', '*'
 
 Set-Location -Path ..\

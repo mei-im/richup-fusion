@@ -15,6 +15,7 @@ not_quit = True
 
 async def message_handler(game: Game, message:str):
     message, status = process_message(message)
+    print(f"Message: {message}")
     if message == "OK" and status == None:
         return "OK"
     elif status == "voice":
@@ -30,14 +31,24 @@ def process_message(message):
         return "OK", None
     else:
         json_command = ET.fromstring(message).find(".//command").text
-        print(f"Json command: {json_command}")
         if "recognized" in json_command:
-            gesture = json.loads(json_command)
-            return gesture, "gesture"
-        elif "nlu" in json_command:
-            command = json.loads(json_command)["nlu"]
-            command = json.loads(command)
-            return command, "voice"
+            recognized = json.loads(json_command)["recognized"]
+            print(f"Recognized: {recognized}")
+            modalidade = recognized[0]
+
+            if "GESTURE" == modalidade:
+                gesture = json.loads(json_command)
+                return gesture, "gesture"
+            # elif "SPEECH" == modalidade:
+            #     command = json.loads(json_command)["nlu"]
+            #     command = json.loads(command)
+            #     return command, "voice"
+            elif "FUSION" == modalidade:
+                return "OK", None
+            else:
+                print("Not recognized")
+                print(f"Modalities: {modalidade}")
+                return "OK", None
         else:
             return "OK", None
     
@@ -63,6 +74,8 @@ async def main():
             except Exception as e:
                 tts("Ocorreu um erro, a fechar o jogo")
                 print(f"Error: {e}")
+                game.close()
+                break
         
         print("Closing connection")
         await websocket.close()

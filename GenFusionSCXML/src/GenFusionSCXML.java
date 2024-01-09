@@ -24,8 +24,13 @@ public class GenFusionSCXML {
     public static void main(String[] args) throws IOException {
 
     FusionGenerator fg = new FusionGenerator();
-  
 
+    fg.Single(Speech.CHOOSE_COLOR_AZUL, Output.CHOOSE_COLOR_AZUL);
+    fg.Single(Speech.CHOOSE_COLOR_VERDE, Output.CHOOSE_COLOR_VERDE);
+
+    // fg.Redundancy(Speech.CHANGE_COLOR_AZUL, Speech.CHOOSE_COLOR_BLUE, Output.CHANGE_COLOR_AZUL);
+  
+     /*  
     fg.Complementary(Speech.CHANGE_COLOR_AZUL, Touch.SHAPE_TRIANGULO, Output.CHANGE_COLOR_TRIANGULO_AZUL);
     fg.Complementary(Speech.CHANGE_COLOR_VERDE, Touch.SHAPE_TRIANGULO, Output.CHANGE_COLOR_TRIANGULO_VERDE);
     fg.Complementary(Speech.CHANGE_COLOR_CINZENTO, Touch.SHAPE_TRIANGULO, Output.CHANGE_COLOR_TRIANGULO_CINZENTO);
@@ -56,9 +61,7 @@ public class GenFusionSCXML {
     fg.Complementary(Speech.CHANGE_COLOR_PRETO, Touch.SHAPE_CIRCULO, Output.CHANGE_COLOR_CIRCULO_PRETO);
     fg.Complementary(Speech.CHANGE_COLOR_LARANJA, Touch.SHAPE_CIRCULO, Output.CHANGE_COLOR_CIRCULO_LARANJA);
 
-    
-
-  /*  
+      
     fg.Sequence(Speech.SQUARE, SecondMod.RED, Output.SQUARE_RED);
     fg.Sequence(Speech.SQUARE, SecondMod.BLUE, Output.SQUARE_BLUE);
     fg.Sequence(Speech.SQUARE, SecondMod.YELLOW, Output.SQUARE_YELLOW);
@@ -68,6 +71,8 @@ public class GenFusionSCXML {
     fg.Redundancy(Speech.CIRCLE, SecondMod.RED, Output.CIRCLE_RED);
     fg.Redundancy(Speech.CIRCLE, SecondMod.BLUE, Output.CIRCLE_BLUE);
     fg.Redundancy(Speech.CIRCLE, SecondMod.YELLOW, Output.CIRCLE_YELLOW);
+
+
     
     fg.Single(Speech.CIRCLE, Output.CIRCLE);
     

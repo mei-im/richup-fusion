@@ -409,7 +409,7 @@ async function InitializeKWS(){
     obj.text = final_transcript;
     $.post( "http://127.0.0.1:5005/model/parse", JSON.stringify(obj), function( data ) {
       console.log(data);
-
+      
       var message = {'intent': data.intent.name,'entities': data.entities}
       var messaget = btoa(unescape(encodeURIComponent(final_transcript)));
       var intent_uppercase = data.intent.name.toUpperCase()
@@ -422,7 +422,7 @@ async function InitializeKWS(){
         entitiesValue = handleEntitiesValue(data.entities)
         console.log(entitiesValue)
       }
-      var result = { "recognized" : ["SPEECH", intent_uppercase], "text": messaget, "nlu": message };
+      var result = { "recognized" : ["SPEECH", intent_uppercase], "text": messaget, "nlu": JSON.stringify(data) };
 
       if (entitiesValue != "ERROR") {
         result.recognized.push(entitiesValue)
