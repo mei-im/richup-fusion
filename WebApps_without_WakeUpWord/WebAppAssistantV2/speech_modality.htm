@@ -263,7 +263,7 @@ async function InitializeKWS(){
         energyDiv.textContent += event.results[i][0].confidence;
         {
           final_transcript ="";
-          console.log("++"+event.results[i][0].transcript+"++");
+          // console.log("++"+event.results[i][0].transcript+"++");
           final_transcript=event.results[i][0].transcript.trim();
           /*var sentence = event.results[i][0].transcript.trim().toLowerCase();
           if(sentence.startsWith("casa viva") || sentence.startsWith("viva") || sentence.startsWith("aviva") || sentence.startsWith("sa viva") || sentence.startsWith("da viva") ||sentence.startsWith("ora viva"))
@@ -403,25 +403,54 @@ async function InitializeKWS(){
   var mmiCli_1 = null;
   mmiCli_1 = new MMIClient(null, mmi_fusion + "SPEECHIN");
 
-  function sendMMI(final_transcript) {
+  function sendMMI(final_transcript){
 
-  var obj = new Object();
-  obj.text = final_transcript;
-  $.post("http://localhost:5005/model/parse", JSON.stringify(obj), function (data) {
+    var obj = new Object();
+    obj.text = final_transcript;
+    $.post( "http://127.0.0.1:5005/model/parse", JSON.stringify(obj), function( data ) {
       console.log(data);
 
+      var message = {'intent': data.intent.name,'entities': data.entities}
       var messaget = btoa(unescape(encodeURIComponent(final_transcript)));
-      var result = { "recognized": ["SPEECH", "SPEECHIN", "APP"], "text": messaget, "nlu": JSON.stringify(data) };
-      mmiCli_1.sendToIM(new LifeCycleEvent("SPEECHIN", "IM", "text-1", "ctx-1").
-          doExtensionNotification(new EMMA("text-", "text", "command", 1, 0).
-              setValue(JSON.stringify(result))));
+      var intent_uppercase = data.intent.name.toUpperCase()
+      var confidence = data.intent.confidence
+      var entitiesValue = "ERROR"
 
-  });
-  }
+      console.log(data.entities.length)
+
+      if (data.entities.length > 0) {
+        entitiesValue = handleEntitiesValue(data.entities)
+        console.log(entitiesValue)
+      }
+      var result = { "recognized" : ["SPEECH", intent_uppercase], "text": messaget, "nlu": message };
+
+      if (entitiesValue != "ERROR") {
+        result.recognized.push(entitiesValue)
+      }
+
+      mmiCli_1.sendToIM(new LifeCycleEvent("SPEECHIN", "IM", "text-1", "ctx-1").
+            doExtensionNotification(new EMMA("text-", "text", "command", 1, 0).
+            setValue(JSON.stringify(result))));
+   });
 
   /*
     
             */
+  }
+
+  const list_of_colors = ['lime', 'yellow', 'orange', 'red', 'blue', 'cyan','water', 'green', 'brown', 'hotpink',
+                          'purple','pink','amarelo','laranja','vermelho','azul','ciano','verde','marrom','rosa',
+                          'roxo','água','agua','castanho','magenta','castanha','verde lima','vermelha','amaerela',
+                          'roxa'];
+
+  function handleEntitiesValue(entities) {
+    var value_lowercase = entities[0].value.toLowerCase()
+    if(list_of_colors.includes(value_lowercase) && entities[0].entity === "color") {
+      return value_lowercase
+    }
+
+    return "ERROR"
+  }
  // sendMMI("mudar para verde o circulo");
   
 
@@ -485,6 +514,7 @@ async function InitializeKWS(){
 
 
   //sendMMI("Ligar as luzes")
+
 </script> 
 
 

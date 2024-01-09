@@ -58,10 +58,6 @@ public class GenFusionSCXML {
 
     
 
-
-
-
-
   /*  
     fg.Sequence(Speech.SQUARE, SecondMod.RED, Output.SQUARE_RED);
     fg.Sequence(Speech.SQUARE, SecondMod.BLUE, Output.SQUARE_BLUE);

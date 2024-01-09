@@ -7,11 +7,8 @@ package Modalities;
 
 import scxmlgen.interfaces.IModality;
 
-/**
- *
- * @author nunof
- */
-public enum Touch implements IModality{
+
+public enum Gestures implements IModality{
 
     SHAPE_TRIANGULO("[TOUCH][SHAPE][TRIANGULO]",5000),
     SHAPE_QUADRADO("[TOUCH][SHAPE][QUADRADO]",1500),
@@ -24,7 +21,7 @@ public enum Touch implements IModality{
     private int timeout;
 
 
-    Touch(String m, int time) {
+    Gestures(String m, int time) {
         event=m;
         timeout=time;
     }
