@@ -10,7 +10,9 @@ nlu:
     - Olá assistente
     - olá
     - olá assistente
-    - olá assistnete
+    - hello
+    - hi
+    - Assistente, estás aí?
     
 - intent: goodbye
   examples: |
@@ -32,6 +34,9 @@ nlu:
     - sim, quero
     - sim, por favor
     - Confirmo
+    - Assistente, confirmo, podes continuar
+    - Confirmo, podes continuar
+    - Confirmo, continua
 
 - intent: deny
   examples: |
@@ -40,6 +45,9 @@ nlu:
     - Nunca
     - Acho que não
     - Nem por isso
+    - Não, obrigado
+    - Não, obrigada
+
 
 # - intent: light_switch
 #   examples: |
@@ -74,7 +82,6 @@ nlu:
 #     - Por o [circulo](shape) em  [branco](color)
 #     - Mudar para [azul](color) o [circulo](shape) 
 
-
 - intent: insert_name 
   examples: |
     - O meu nome é [dani](name)
@@ -100,12 +107,15 @@ nlu:
     - Quero criar uma sala
     - Quero criar uma sala privada
     - Criar sala privada
-    - Criar sala
-    - Criar uma sala
+    - Por favor, Criar sala
+    - Se poderes cria uma sala
     - Criar uma sala privada
     - Criar uma sala privada para jogar
     - Criar uma sala para jogar
-
+    - Assistente, vamos criar um sala para jogar
+    - Assistente, cria uma sala para jogar
+    - Por favor, podes criar uma sala para jogar
+    
 - intent: choose_color
   examples: |
     - Quero ser o [vermelho](color)
@@ -123,7 +133,18 @@ nlu:
     - Mudar para a cor [yellow](color)
     - Quero a cor [blue](color)
     - Quero manter a cor [blue](color)
-
+    - Minha peça é [blue](color)
+    - Eu quero a peça [blue](color)
+    - Eu vou jogar com a peça [blue](color)
+    - Eu vou jogar com a cor [roxo](color)
+    - Jogo com a peça da cor [castanho](color)
+    - Jogo com a peça [blue](color)
+    - Quero mudar a minha peça para [amarelo](color)
+    - Quero mudar a minha peça para a cor [rosa](color)
+    - Muda a minha peça para [verde](color)
+    - Podes mudar a minha peça para [blue](color)
+    - Podes muda para [vermelho](color)
+    - Podes mudar para a cor [lima](color)
 
 - intent: information_house
   examples: |
@@ -151,6 +172,17 @@ nlu:
     - Quanto vou pagar naquela casa em [shanghai](house)
     - Quanto vou pagar naquela propriedade em [cdg airport](house)
     - Abrir [tlv airport](house)
+    - Abrir a informação da casa [london](house)
+    - Abrir a informação da propriedade [london](house)
+    - Podes me mostrar a casa [london](house)
+    - Podes me mostrar a propriedade [london](house)
+    - Por favor, preciso de informação sobre a casa [london](house)
+    - Por favor, preciso de informação sobre a propriedade [london](house)
+    - Por favor, preciso de informação sobre a casa [selecionada](house)
+    - Quero saber mais sobre a casa [selecionada](house)
+    - Quero saber mais sobre a propriedade [selecionada](house)
+    - Podes me fornecer informação sobre a casa [selecionada](house)
+    - Podes me dar me mais informação sobre a propriedade [selecionada](house)
 
 - intent: start_game
   examples: |
@@ -214,6 +246,20 @@ nlu:
     - Quero comprar esta casa 
     - Pago o [140](price) pela casa
     - Pago o [600](price) pela propriedade
+    - A casa é minha
+    - A propriedade é minha
+    - Esta propriedade vai ser minha
+    - Assistente, vamos comprar a casa
+    - Assistente, vamos ficar com a casa
+    - Assistente, vamos comprar a propriedade ao banco
+    - Easy, casa vai ser minha
+    - Estão a ver, já obtive uma nova propriedade
+    - Assistente, vamos adicionar mais uma propriedade ao meu portefólio
+    - Assistente, vamos adicionar uma nova casa a minha lista
+    - Essa casa ainda não tem dono, vou ficar com ela
+    - Se não tiver dono, vou ficar com ela
+    - Se tenho dinheiro, vou comprar a casa
+    - Se tenho dinheiro, claramente, que a quero comprar
 
 
 - intent: leave_prison
@@ -222,6 +268,12 @@ nlu:
     - Pago para sair da prisão
     - Quero pagar para sair da prisão
     - Quero sair da prisão
+    - Preciso de sair da prisão
+    - Por favor, tire-me da prisão
+    - Por favor, tire-me da prisão, pago o que for preciso
+    - Assistente, queria sair da prisão
+    - Pago o que for preciso para sair da prisão
+    - Pago o que for preciso para sair da prisão, tira me daqui
 
 - intent: give_up_game
   examples: |
@@ -236,6 +288,8 @@ nlu:
     - Quero declarar falência
     - Não quero jogar mais
     - Quero parar de jogar
+    - Assistente, quero parar de jogar
+    - Assistente, não quero jogar mais
 
 
 - intent: close_game
@@ -247,16 +301,22 @@ nlu:
     - Desligar jogo
     - Sair do jogo
     - Fechar jogo
+    - Quero sair do jogo
+    - Assistente, pode fechar o jogo?
+    - Assistente, quero sair do jogo
+
 
 - intent: list_of_colors
   examples: |
     - Quais são as cores disponíveis?
-    - Quais são as cores?
+    - Assistente, quais são as cores?
     - Quais são as cores que posso escolher?
     - Quais são as cores que posso escolher para jogar?
     - Posso escolher qualquer cor?
     - Podes fornecer uma lista de cores?
     - Podes fornecer uma lista de cores disponíveis?
+    - Por favor, não sei qual cor escolher
+    - Por favor, podes me dar uma lista de cores?
 
 - intent: game_info
   examples: |
@@ -266,16 +326,24 @@ nlu:
     - Podes me explicar como jogar?
     - Podes me explicar as regras do jogo?
     - Quero saber as regras do jogo
-    - Quero saber as regras
+    - Assistente, podes me dar as regras do jogo?
+    - Assistente, podes me explicar as regras do jogo?
+    - Assiestente, por favor, ajuda me a jogar
+    - Assistente, por favor, ajuda me a perceber como jogar
+
+
 
 - intent: mute
   examples: |
+    - Assitente, para de falar, por favor
     - Desligar o som
     - Desligar o som do jogo
     - Por favor, desliga o som por um bocado
     - Não quero ouvir o som do jogo
     - Coloca o som do jogo em silêncio
     - Desliga o som por um tempo
+    - por favor, não te posso ouvir por um tempo
+    - Assistente, preciso de silêncio
 
 
 - intent: unmute
@@ -290,24 +358,33 @@ nlu:
     - Quero ouvir o som do jogo
     - Coloca o som do jogo
     - Ative o som
-
-
+    - Por favor, ative o som
+    - Assistente, já podes falar
+    - Assistente, já te posso ouvir
+    - Podes voltar a falar, por favor
+    - Agora acho que já podes falar
 
  # TODO IMPLEMENTAR
 - intent: close_information
   examples: |
-  - Fechar
-  - Fechar informação
-  - Quero continuar a jogar
-  - Quero continuar a jogar, por favor
-  - Podes fechar a informação 
-
-
-- intent: show_properties
+    - Fechar
+    - Fechar informação que aparece no ecrã
+    - Fechar informação
+    - Fechar informação, por favor
+    - Quero continuar a jogar
+    - Quero continuar a jogar, por favor
+    - Podes fechar a informação
+    - Por favor, fecha a informação
+  
+- intent: change_to_initial_page
   examples: |
-    - Mostra-me a informação da propriedade
-    - Mostra-me a informação da propriedade, por favor
-    - Mostra-me as informações da propriedade
-    - Mostra-me as informações da propriedade selecionada
+    - Quero voltar à página inicial
+    - Quero voltar ao menu inicial
+    - Posso sair do jogo
+    - Podes fechar o jogo
+    - Por favor, fecha o jogo
+    - Por favor, quero voltar ao menu inicial
+    - Por favor, quero voltar à página inicial
+    - Quero criar um novo jogo
 
 
