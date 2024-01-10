@@ -5,6 +5,7 @@ import ssl
 import websockets
 from function_gesture_handler import gesture_handler
 from function_voice_handler import voice_handler
+from function_fusion_handler import fusion_handler
 
 from game.game import Game
 from tts import TTS
@@ -15,7 +16,6 @@ not_quit = True
 
 async def message_handler(game: Game, message:str):
     message, status = process_message(message)
-    print(f"Message: {message}")
     if message == "OK" and status == None:
         return "OK"
     elif status == "voice":
@@ -23,7 +23,7 @@ async def message_handler(game: Game, message:str):
     elif status == "gesture":
         await gesture_handler(game=game, gesture=message)
     elif status == "fusion":
-        return "FUSION"
+        await fusion_handler(game=game, command=message)
     else:
         return "OK"
 
@@ -36,8 +36,8 @@ def process_message(message):
         if "recognized" in json_command:
             recognized = json.loads(json_command)["recognized"]
             modalidade = recognized[0]
-
-            if "GESTURE" == modalidade:
+            print("Modalidade: ", modalidade)
+            if "GESTURES" == modalidade:
                 gesture = json.loads(json_command)
                 return gesture, "gesture"
             elif "SPEECH" == modalidade:

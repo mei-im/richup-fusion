@@ -26,19 +26,24 @@ public class GenFusionSCXML {
 
     FusionGenerator fg = new FusionGenerator();
 
-    // -------------------- REDUNDANTES --------------------
+    // --------------------COMPLEMENTARES--------------------
+    fg.Complementary(Speech.GAME_INFO_HELP, Gestures.HELP, Output.HELP_GAME_INFO);
+    fg.Complementary(Speech.LIST_OF_COLORS_HELP, Gestures.HELP, Output.HELP_LIST_OF_COLORS);
+    
+    fg.Complementary(Gestures.ROLL_DICE, Speech.BUY_HOUSE, Output.ROLL_DICE_BUY_HOUSE);
+    fg.Complementary(Speech.ROLL_DICE, Gestures.BUY_HOUSE, Output.ROLL_DICE_BUY_HOUSE);
+  
+
+
+     // -------------------- REDUNDANTES --------------------
     fg.Redundancy(Speech.ROLL_DICE, Gestures.ROLL_DICE, Output.ROLL_DICE);
     fg.Redundancy(Speech.BUY_HOUSE, Gestures.BUY_HOUSE, Output.BUY_HOUSE);
     fg.Redundancy(Speech.END_TURN, Gestures.END_TURN, Output.END_TURN);
     fg.Redundancy(Speech.GIVE_UP_GAME, Gestures.GIVE_UP_GAME, Output.GIVE_UP_GAME);
 
 
-    // --------------------COMPLEMENTARES--------------------
-    fg.Complementary(Speech.GAME_INFO_HELP, Gestures.HELP, Output.HELP_GAME_INFO);
-    fg.Complementary(Speech.LIST_OF_COLORS_HELP, Gestures.HELP, Output.HELP_LIST_OF_COLORS);
-
     // --------------------SINGLE--------------------
-    fg.Single(Speech.GAME_INFO_HELP, Output.HELP_GAME_INFO);
+    fg.Single(Speech.GAME_INFO_HELP, Output.GAME_INFO);
     fg.Single(Speech.LIST_OF_COLORS_HELP, Output.LIST_OF_COLORS);
   
   /*
