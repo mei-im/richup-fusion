@@ -446,9 +446,8 @@ async function InitializeKWS(){
   function handleEntitiesValue(entities) {
     var value_lowercase = entities[0].value.toLowerCase()
     if(list_of_colors.includes(value_lowercase) && entities[0].entity === "color") {
-      return value_lowercase
+      return value_lowercase.toUpperCase()
     }
-
     return "ERROR"
   }
  // sendMMI("mudar para verde o circulo");

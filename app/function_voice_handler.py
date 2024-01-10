@@ -15,7 +15,6 @@ intent_before = ""
 
 async def voice_handler(game: Game, message:str):
     global intent_before
-    print(f"Speak voice received: {message}")
     if message["intent"]["name"] in list_intent:
         print(f"Message received/ intent: {message['intent']['name']}")
         intent = message["intent"]["name"]

@@ -37,6 +37,7 @@ class Game:
 
     def get_url(self):
         return self.browser.current_url
+    
 # Voice commands    
     def insert_name(self, name):
         try:

@@ -22,6 +22,8 @@ async def message_handler(game: Game, message:str):
         await voice_handler(game=game, message=message)
     elif status == "gesture":
         await gesture_handler(game=game, gesture=message)
+    elif status == "fusion":
+        return "FUSION"
     else:
         return "OK"
 
@@ -39,12 +41,12 @@ def process_message(message):
             if "GESTURE" == modalidade:
                 gesture = json.loads(json_command)
                 return gesture, "gesture"
-            # elif "SPEECH" == modalidade:
-            #     command = json.loads(json_command)["nlu"]
-            #     command = json.loads(command)
-            #     return command, "voice"
+            elif "SPEECH" == modalidade:
+                command = json.loads(json_command)["nlu"]
+                command = json.loads(command)
+                return command, "voice"
             elif "FUSION" == modalidade:
-                return "OK", None
+                return "FUSION", "fusion"
             else:
                 print("Not recognized")
                 print(f"Modalities: {modalidade}")
