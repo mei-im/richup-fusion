@@ -443,11 +443,24 @@ async function InitializeKWS(){
                           'roxo','água','agua','castanho','magenta','castanha','verde lima','vermelha','amaerela',
                           'roxa'];
 
+  const list_of_names = ['dani', 'maria', 'mariana', 'martini', 'maria12', 'joão', 'julia', 'vasco',
+                        'guilherme', 'luís afonso', 'sofia', 'miguel', 'gui', 'lucas', 'inês', 'vicente',
+                        'tomás', 'luis', 'carolina', 'franscisco', 'pedro', 'josé', 'samuel', 'afonso', 
+                        'matilde', 'leonor', 'camila', 'ricardo', 'miguel', 'beatriz', 'daniela', 'daniel',
+                      'lucas', 'lara', 'laura', 'margarida', 'marta', 'sara', 'ana', 'joana', 'guida', 'rita'
+  ]
+  
   function handleEntitiesValue(entities) {
     var value_lowercase = entities[0].value.toLowerCase()
     if(list_of_colors.includes(value_lowercase) && entities[0].entity === "color") {
       return value_lowercase.toUpperCase()
     }
+
+    if (list_of_names.includes(value_lowercase) && entities[0].entity === "name") {
+      return value_lowercase.toUpperCase()
+    }
+
+
     return "ERROR"
   }
  // sendMMI("mudar para verde o circulo");

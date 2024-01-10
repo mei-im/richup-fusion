@@ -10,11 +10,16 @@ import scxmlgen.interfaces.IModality;
 
 public enum Gestures implements IModality{
 
-    SHAPE_TRIANGULO("[GESTURES][SHAPE][TRIANGULO]",5000),
-    SHAPE_QUADRADO("[GESTURES][SHAPE][QUADRADO]",1500),
-    SHAPE_CIRCULO("[GESTURES][SHAPE][CIRCULO]",1500),
 
-  
+    // ----------------REDUDANTES----------------
+    ROLL_DICE("[GESTURES][HANDONEDIRECTIONROLLDICE]", 1500),
+    BUY_HOUSE("[GESTURES][HANDSJOIN]", 1500),
+    END_TURN("[GESTURES][HANDSDIFFERENTDIRECTIONSCLOSE]", 1500),
+    GIVE_UP_GAME("[GESTURES][HANDSUPGIVEUP]", 1500),
+
+    // ----------------COMPLEMENTARES----------------
+    HELP("[GESTURES][HANDRIGHTUPHELP]", 1500),
+
     ;
     
     private String event;

@@ -22,7 +22,7 @@ nlu:
     - Boa noite, Assistente
     - Até amanhã, Assistente
 
-- intent: affirm
+- intent: confirm
   examples: |
     - Sim
     - Claro
@@ -225,7 +225,6 @@ nlu:
     - Passo 
     - Continuar jogo
 
-
 - intent: buy_house
   examples: |
     - Quero comprar a casa
@@ -261,7 +260,6 @@ nlu:
     - Se tenho dinheiro, vou comprar a casa
     - Se tenho dinheiro, claramente, que a quero comprar
 
-
 - intent: leave_prison
   examples: |
     - Pagar [50](price) para sair da prisão
@@ -291,7 +289,6 @@ nlu:
     - Assistente, quero parar de jogar
     - Assistente, não quero jogar mais
 
-
 - intent: close_game
   examples: |
     - Desligar
@@ -304,7 +301,6 @@ nlu:
     - Quero sair do jogo
     - Assistente, pode fechar o jogo?
     - Assistente, quero sair do jogo
-
 
 - intent: list_of_colors
   examples: |
@@ -331,8 +327,6 @@ nlu:
     - Assiestente, por favor, ajuda me a jogar
     - Assistente, por favor, ajuda me a perceber como jogar
 
-
-
 - intent: mute
   examples: |
     - Assitente, para de falar, por favor
@@ -344,7 +338,6 @@ nlu:
     - Desliga o som por um tempo
     - por favor, não te posso ouvir por um tempo
     - Assistente, preciso de silêncio
-
 
 - intent: unmute
   examples: |
@@ -363,6 +356,7 @@ nlu:
     - Assistente, já te posso ouvir
     - Podes voltar a falar, por favor
     - Agora acho que já podes falar
+
 
  # TODO IMPLEMENTAR
 - intent: close_information
