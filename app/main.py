@@ -35,7 +35,6 @@ def process_message(message):
         json_command = ET.fromstring(message).find(".//command").text
         if "recognized" in json_command:
             recognized = json.loads(json_command)["recognized"]
-            print(f"Recognized: {recognized}")
             modalidade = recognized[0]
 
             if "GESTURE" == modalidade:
@@ -46,7 +45,8 @@ def process_message(message):
                 command = json.loads(command)
                 return command, "voice"
             elif "FUSION" == modalidade:
-                return "FUSION", "fusion"
+                command = recognized[1]
+                return command, "fusion"
             else:
                 print("Not recognized")
                 print(f"Modalities: {modalidade}")
