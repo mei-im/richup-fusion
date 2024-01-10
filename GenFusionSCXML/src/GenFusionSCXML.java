@@ -11,6 +11,7 @@ import scxmlgen.Fusion.FusionGenerator;
 import Modalities.Output;
 import Modalities.Speech;
 import Modalities.Touch;
+import Modalities.Gestures;
 
 /**
  *
@@ -24,8 +25,23 @@ public class GenFusionSCXML {
     public static void main(String[] args) throws IOException {
 
     FusionGenerator fg = new FusionGenerator();
-  
 
+    // -------------------- REDUNDANTES --------------------
+    fg.Redundancy(Speech.ROLL_DICE, Gestures.ROLL_DICE, Output.ROLL_DICE);
+    fg.Redundancy(Speech.BUY_HOUSE, Gestures.BUY_HOUSE, Output.BUY_HOUSE);
+    fg.Redundancy(Speech.END_TURN, Gestures.END_TURN, Output.END_TURN);
+    fg.Redundancy(Speech.GIVE_UP_GAME, Gestures.GIVE_UP_GAME, Output.GIVE_UP_GAME);
+
+
+    // --------------------COMPLEMENTARES--------------------
+    fg.Complementary(Speech.GAME_INFO_HELP, Gestures.HELP, Output.HELP_GAME_INFO);
+    fg.Complementary(Speech.LIST_OF_COLORS_HELP, Gestures.HELP, Output.HELP_LIST_OF_COLORS);
+
+    // --------------------SINGLE--------------------
+    fg.Single(Speech.GAME_INFO_HELP, Output.HELP_GAME_INFO);
+    fg.Single(Speech.LIST_OF_COLORS_HELP, Output.LIST_OF_COLORS);
+  
+  /*
     fg.Complementary(Speech.CHANGE_COLOR_AZUL, Touch.SHAPE_TRIANGULO, Output.CHANGE_COLOR_TRIANGULO_AZUL);
     fg.Complementary(Speech.CHANGE_COLOR_VERDE, Touch.SHAPE_TRIANGULO, Output.CHANGE_COLOR_TRIANGULO_VERDE);
     fg.Complementary(Speech.CHANGE_COLOR_CINZENTO, Touch.SHAPE_TRIANGULO, Output.CHANGE_COLOR_TRIANGULO_CINZENTO);
@@ -62,7 +78,6 @@ public class GenFusionSCXML {
 
 
 
-  /*  
     fg.Sequence(Speech.SQUARE, SecondMod.RED, Output.SQUARE_RED);
     fg.Sequence(Speech.SQUARE, SecondMod.BLUE, Output.SQUARE_BLUE);
     fg.Sequence(Speech.SQUARE, SecondMod.YELLOW, Output.SQUARE_YELLOW);
