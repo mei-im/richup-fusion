@@ -25,7 +25,7 @@ async def voice_handler(game: Game, message:dict):
        
         if confidence < MIN_CONFIDENCE:
             game.tts(random_not_understand())
-        elif intent == "insert_name":#DONE  
+        elif intent == "insert_name":  
             insert_name_handler(game, message, intent)
         elif intent == "create_room": # DONE
             game.create_game()
@@ -34,37 +34,37 @@ async def voice_handler(game: Game, message:dict):
             choose_color_handler(game, message, intent)
         elif intent == "information_house":
             information_house_handler(game, message, intent)
-        elif intent == "start_game": #DONE
+        elif intent == "start_game": 
             game.start_game()
             intent_before = intent
-        elif intent == "roll_dice": #DONE
+        elif intent == "roll_dice": 
             game.roll_dice()
             intent_before = intent
-        elif intent == "end_turn": #Done
+        elif intent == "end_turn": 
             game.end_turn()
             intent_before = intent
-        elif intent == "buy_house": #DONE
+        elif intent == "buy_house": 
             game.buy()
             intent_before = intent
         elif intent == "leave_prison":
             game.leave_prison()
             intent_before = intent
-        elif intent == "give_up_game": #DONE
+        elif intent == "give_up_game": 
             game.give_up_game()
             intent_before = intent
-        elif  intent == "confirm" and "give_up_game" in intent_before: #DONE
+        elif  intent == "confirm" and "give_up_game" in intent_before: 
             game.confirm_give_up_game()
             game.tts("Podes fechar o jogo, ou continuar a ver o jogo a decorrer.")
             intent_before = intent
-        elif  intent == "deny" and "give_up_game" in intent_before: #DONE
+        elif  intent == "deny" and "give_up_game" in intent_before: 
             game.cancel_give_up_game()
             intent_before = intent
-        elif intent == "close_game":#DONE
+        elif intent == "close_game":
             game.tts("Obrigado por jogar Richup")
             game.close()
             global not_quit
             not_quit = False
-        elif intent == "list_of_colors": #DONE
+        elif intent == "list_of_colors": 
             string_colors = ", ".join(available_colors_pt)
             game.tts(f"As cores disponíveis são: {string_colors}")
             intent_before = intent
