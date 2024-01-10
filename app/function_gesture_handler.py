@@ -17,9 +17,9 @@ async def gesture_handler(game: Game, gesture:str):
     if confidence < MIN_CONFIDENCE:
         game.tts(random_not_understand())
     elif name_of_gesture in list_gesture:
-        if name_of_gesture == "HANDRIGHTUPHELP": # not used
+        if name_of_gesture == "HANDRIGHTUPHELP": # NOT USED
             game.help()
-        elif name_of_gesture == "HANDSUPGIVEUP": # not used
+        elif name_of_gesture == "HANDSUPGIVEUP": # NOT USED
             game.give_up_game()
         elif name_of_gesture == "HANDSFRONTSELECT":
             hand_front_select_handler(game)
@@ -27,11 +27,11 @@ async def gesture_handler(game: Game, gesture:str):
             hand_left_shoulder_decrease_handler(game)
         elif name_of_gesture == "HANDRIGHTSHOULDERLEVELINCREASE":
             hand_right_shoulder_increase_handler(game)
-        elif name_of_gesture == "HANDSDIFFERENTDIRECTIONSCLOSE":    # not used
+        elif name_of_gesture == "HANDSDIFFERENTDIRECTIONSCLOSE":    # NOT USED
             game.end_turn()
-        elif name_of_gesture == "HANDONEDIRECTIONROLLDICE": # not used
+        elif name_of_gesture == "HANDONEDIRECTIONROLLDICE": # NOT USED
             game.roll_dice()
-        elif name_of_gesture == "HANDSJOIN": # not used
+        elif name_of_gesture == "HANDSJOIN": # NOT USED
             game.buy()
     else:
         game.tts(random_not_understand_the_gesture())
@@ -42,19 +42,17 @@ def hand_right_shoulder_increase_handler(game):
     if game.button.join_game.text.lower() == "join game":
         game.change_color_number(number=1, increase=True)
     else:
-        game.house_activate(number=1, increase=True)
+        game.house_handler(number=1, increase=True)
 
 def hand_left_shoulder_decrease_handler(game):
     if game.button.join_game.text.lower() == "join game":
         game.change_color_number(number=1, increase=False)
     else:
-        game.house_activate(number=1, increase=False)
+        game.house_handler(number=1, increase=False)
 
 def hand_front_select_handler(game):
     if game.button.join_game.text.lower() == "join game":
         game.join_game()
-        if game.button.join_game.text.lower() != "join game":
-            game.house_activate(number=1, increase=True)
     else:
         name_house = game.name_house
         game.list_house_information(name_house)

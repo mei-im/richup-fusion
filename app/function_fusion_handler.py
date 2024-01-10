@@ -1,4 +1,5 @@
 import logging
+import time
 from game.game import Game
 
 from lists.fusion_list import list_fusion
@@ -15,21 +16,32 @@ async def voice_handler(game: Game, command: str):
             game.end_turn()
         elif command == "BUY_HOUSE":
             game.buy()
-        elif command == "GIVE_UP_GAME": # todo melhorar isto
+        elif command == "GIVE_UP_GAME":
             game.give_up_game()
-        elif command == "HELP_GAME_INFO":
+        elif command == "HELP_GAME_INFO" or command == "GAME_INFO":
             game.help()
-        elif command == "ROLL_DICE_BUY_HOUSE":
-            game.roll_dice()
-            if game.button.buy_house.text.lower() == "buy house":
-                game.buy()
-            else:
-                game.tss("A propriedade já tem dono") 
-                
         elif command == "HELP_LIST_OF_COLORS" or command == "LIST_OF_COLORS":
-            string_colors = ", ".join(game.available_colors_pt)
-            game.tts(f"As cores disponíveis são: {string_colors}")
+            game.help_colors()
+        elif command == "ROLL_DICE_BUY_HOUSE":
+            roll_dice_and_buy_house(game)
+        elif command == "COMPLETED_TURN":
+            # TODO: IMPLEMENTAR
+            game.tss("Ainda não implementado")
     else:
         game.tts("Não percebi o comando") # TODO: CREATE A RANDOM FUNCTION
         # log.info(f"Command not found: {gesture}")
         print(f"Command not found: {command}")
+
+def roll_dice_and_buy_house(game: Game):
+    game.roll_dice()
+    time.sleep(3)
+    if "Buy" in game.button.buy.text():
+        game.buy()
+    elif "get free" in game.button.leave_prison.text().lower():
+        game.tss("Estas na prisão, não podes comprar casas")
+    elif "roll" in  game.button.roll_dice.text().lower():
+        game.tss("Ainda podes voltar a lançar os dados")
+    elif "end" in game.button.end_turn.text().lower():
+        game.tss("Estas numa casa que não podes comprar")
+    else:
+        game.tss("Não podes comprar casas neste momento")

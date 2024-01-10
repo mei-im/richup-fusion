@@ -18,9 +18,6 @@ public enum Output implements IOutput{
     HELP_GAME_INFO("[FUSION][HELP_GAME_INFO]"),
     HELP_LIST_OF_COLORS("[FUSION][HELP_LIST_OF_COLORS]"),
     ROLL_DICE_BUY_HOUSE("[FUSION][ROLL_DICE_BUY_HOUSE]"),
-    
-
-
 
 
     ;

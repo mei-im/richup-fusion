@@ -16,6 +16,10 @@ GAME_INFO = """O RichUp é a adaptação do clássico jogo de tabuleiro que comb
             O vencedor é o último jogador que não vai à falência. Para ganhar, é essencial tomar decisões financeiras inteligentes, formar alianças e gerir recursos com sabedoria. 
             Boa sorte!"""
 
+available_colors_pt =["verde lima", "amarela", "laranja", "vermelho", "azul", "ciano", "verde", "castanha", "magenta", "cor de rosa"]
+
+
+
 class Game:
     def __init__(self, TTS) -> None:
         self.name_house = None
@@ -70,7 +74,6 @@ class Game:
         if self.get_url() == "https://richup.io/":
             self.tts(random_create_room())
             return
-        
         try: 
             if self.button.join_game_after_color.text.lower() == 'join game':
                 name_color = colors_in_pt[color]
@@ -87,7 +90,6 @@ class Game:
             self.tts("Não é permitido mudares ou escolheres a cor, enquanto não estás numa sala ou num jogo a decorrer")
 
     def start_game(self):
-
         if self.get_url() == "https://richup.io/":
             self.tts(random_create_room())
             return
@@ -172,6 +174,10 @@ class Game:
             self.tts("Precisas de entrar numa sala para acessar ao tabuleiro do jogo")
             return
         
+        if self.name_house != house_name:
+            self.activate_house(house_name)
+            time.sleep(3)
+        
         house = self.house.__getattribute__(house_name)
         house.click()
         self.tts(f"Já consegues ver a informação da propriedade {house_name}")
@@ -217,31 +223,40 @@ class Game:
                 return i
         return color_number
 
-    def house_activate(self, number:int, increase:bool):
-        current_house = -1
+    def get_activate_house(self):
         for i in range(len(houses_number)):
             div_element = self.house.__getattribute__(houses_number[i])
             if div_element.get_attribute("style") == "border: 4px solid red;":
-                self.browser.execute_script("arguments[0].style.border='0px solid red'", div_element)
-                current_house = i
-                break
+                return i
+        return -1
+    
+    def activate_house(self, name_house:str):
+        current_house = self.get_activate_house()
+        if current_house != -1:
+            div_element = self.house.__getattribute__(houses_number[current_house])
+            self.browser.execute_script("arguments[0].style.border='0px'", div_element)
 
+        div_element = self.house.__getattribute__(name_house)
+        self.browser.execute_script("arguments[0].style.border='4px solid red'", div_element)
+        self.tts(f"A casa {houses_number[current_house]} foi selecionada")
+        self.name_house = houses_number[current_house]
+            
+    def house_handler (self, number:int, increase:bool):
+        current_house = self.get_activate_house()
         if increase:
             current_house += number
         else:
             current_house -= number
-        
+
         if current_house == -1:
             current_house = len(houses_number) - 1
         elif current_house == len(houses_number):
             current_house = 0
 
-        div_element = self.house.__getattribute__(houses_number[current_house])
-        self.browser.execute_script("arguments[0].style.border='4px solid red'", div_element)
-        self.tts(f"A casa {houses_number[current_house]} foi selecionada")
-        self.name_house = houses_number[current_house]
+        name_house = houses_number[current_house]
+        self.activate_house(number, name_house)
         
-# GESTOS E VOICE COMMANDS
+# GESTOS E VOICE E FUSION COMMANDS
     def help(self):
         if self.get_url() == "https://richup.io/":
             self.tts(random_create_room())
@@ -283,6 +298,8 @@ class Game:
                 time.sleep(3)
                 self.tts("Bem vindo ao sua sala")
                 time.sleep(5)
+                if self.button.start_game.text.lower() == 'start game':
+                    self.house_activate(number = 1, increase = True)
             else:
                 self.tts("Não é permitido entrar na sala, neste momento")
         except:
@@ -353,3 +370,9 @@ class Game:
                     self.tts(random_buy_house_not_in_game())
             except:
                 self.tts(random_buy_house_not_in_game())
+
+    def help_colors(self):
+        string_colors = ", ".join(available_colors_pt)
+        self.tts(f"As cores disponíveis são: {string_colors}")
+
+        
