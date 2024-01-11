@@ -6,6 +6,7 @@ list_fusion = [
 
     "HELP_GAME_INFO", # complementares
     "HELP_LIST_OF_COLORS", # complementares
+    "ROLL_DICE_BUY_HOUSE", # complementares
 
     "LIST_OF_COLORS", # single
     "GAME_INFO", # single

@@ -21,7 +21,7 @@ async def fusion_handler(game: Game, command: str):
             game.help()
         elif command == "HELP_LIST_OF_COLORS" or command == "LIST_OF_COLORS": # DONE
             game.help_colors()
-        elif command == "ROLL_DICE_BUY_HOUSE":
+        elif command == "ROLL_DICE_BUY_HOUSE": #DONE
             roll_dice_and_buy_house(game)
         elif command == "COMPLETED_TURN":
             # TODO: IMPLEMENTAR
@@ -34,16 +34,23 @@ async def fusion_handler(game: Game, command: str):
         # log.info(f"Command not found: {gesture}")
         print(f"Command not found: {command}")
 
-def roll_dice_and_buy_house(game: Game):
+
+# TODO: FUNCTION TO IMPLEMENT
+def roll_dice_and_buy_house(game: Game): 
     game.roll_dice()
-    time.sleep(3)
-    if "Buy" in game.button.buy.text():
+    time.sleep(5)
+    print("AQUI")
+    if "buy" in game.button.buy.text().lower():
+        print("AQUI2")
         game.buy()
-    elif "get free" in game.button.leave_prison.text().lower():
-        game.tss("Estas na prisão, não podes comprar casas")
+    # elif "get free" in game.button.prison_pay.text().lower():
+    #     game.tts("Estas na prisão, não podes comprar casas")
     elif "roll" in  game.button.roll_dice.text().lower():
-        game.tss("Ainda podes voltar a lançar os dados")
+        print("AQUI3")
+        game.tts("Ainda podes voltar a lançar os dados")
     elif "end" in game.button.end_turn.text().lower():
-        game.tss("Estas numa casa que não podes comprar")
+        print("AQUI4")
+        game.tts("Estas numa casa que não podes comprar")
     else:
-        game.tss("Não podes comprar casas neste momento")
+        print("AQUI5")
+        game.tts("Não podes comprar casas neste momento")
