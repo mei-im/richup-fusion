@@ -324,7 +324,6 @@ nlu:
     - Agora acho que já podes falar
 
 
- # TODO IMPLEMENTAR
 - intent: close_information
   examples: |
     - Fechar

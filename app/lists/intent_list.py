@@ -15,4 +15,7 @@ list_intent = ["insert_name",
                "game_info",
                 "help",
                 "mute",
-                "unmute"]
+                "unmute",
+                "goodbye", 
+                "greet", 
+                ]

@@ -27,7 +27,7 @@ intents:
 - mute
 - unmute
 - close_information
-- show_properties
+- change_to_initial_page
 
 entities:
 # - place

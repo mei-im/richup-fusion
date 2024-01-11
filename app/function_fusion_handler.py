@@ -9,21 +9,24 @@ async def fusion_handler(game: Game, command: str):
     print(f"Fusion received: {command}")
 
     if command in list_fusion:
-        if command == "ROLL_DICE":
+        if command == "ROLL_DICE": #DONE
             game.roll_dice()
-        elif command == "END_TURN":
+        elif command == "END_TURN": #DONE
             game.end_turn()
-        elif command == "BUY_HOUSE":
+        elif command == "BUY_HOUSE": #DONE
             game.buy()
-        elif command == "GIVE_UP_GAME":
+        elif command == "GIVE_UP_GAME": #DONE
             game.give_up_game()
-        elif command == "HELP_GAME_INFO" or command == "GAME_INFO":
+        elif command == "HELP_GAME_INFO" or command == "GAME_INFO": # DONE
             game.help()
-        elif command == "HELP_LIST_OF_COLORS" or command == "LIST_OF_COLORS":
+        elif command == "HELP_LIST_OF_COLORS" or command == "LIST_OF_COLORS": # DONE
             game.help_colors()
         elif command == "ROLL_DICE_BUY_HOUSE":
             roll_dice_and_buy_house(game)
         elif command == "COMPLETED_TURN":
+            # TODO: IMPLEMENTAR
+            game.tss("Ainda não implementado")
+        elif command == "INICIALIZATION_GAME": 
             # TODO: IMPLEMENTAR
             game.tss("Ainda não implementado")
     else:

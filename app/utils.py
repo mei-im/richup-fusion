@@ -249,3 +249,13 @@ def random_frase_color(color):
             f"A cor que estás é a {color}",
             f"A cor selecionada foi a {color}",
     ]    
+
+@randomize
+def random_greet():
+    return ["Olá",
+            "Estou aqui, em que posso ajudar",
+            "Olá, em que posso ajudar",
+            "Diz-me o que queres fazer",
+            "Em que posso ajudar",
+            "Continuo aqui, em que posso ajudar",
+    ]

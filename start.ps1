@@ -14,5 +14,10 @@ Set-Location -Path ..\..\
 conda activate rasa-env
 Set-Location -Path .\rasaDemo
 Start-Process -FilePath rasa -ArgumentList 'run', '--enable-api', '-m', '.\models\', '--cors', '*'
+conda deactivate
+conda deactivate
 
 Set-Location -Path ..\
+# Set-Location -Path .\app
+# .\venv\Scripts\activate
+# python .\main.py
