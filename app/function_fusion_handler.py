@@ -1,6 +1,7 @@
 import logging
 import time
 from game.game import Game
+from utils import *
 
 from lists.fusion_list import list_fusion
 
@@ -24,33 +25,21 @@ async def fusion_handler(game: Game, command: str):
         elif command == "ROLL_DICE_BUY_HOUSE": #DONE
             roll_dice_and_buy_house(game)
         elif command == "COMPLETED_TURN":
-            # TODO: IMPLEMENTAR
             game.tss("Ainda não implementado")
         elif command == "INITIALIZATION_GAME": 
-            # TODO: IMPLEMENTAR
             game.tss("Ainda não implementado")
     else:
         game.tts("Não percebi o comando") # TODO: CREATE A RANDOM FUNCTION
         # log.info(f"Command not found: {gesture}")
         print(f"Command not found: {command}")
 
-
-# TODO: FUNCTION TO IMPLEMENT
 def roll_dice_and_buy_house(game: Game): 
     game.roll_dice()
     time.sleep(5)
-    print("AQUI")
-    if "buy" in game.button.buy.text().lower():
-        print("AQUI2")
+    try:
         game.buy()
-    # elif "get free" in game.button.prison_pay.text().lower():
-    #     game.tts("Estas na prisão, não podes comprar casas")
-    elif "roll" in  game.button.roll_dice.text().lower():
-        print("AQUI3")
-        game.tts("Ainda podes voltar a lançar os dados")
-    elif "end" in game.button.end_turn.text().lower():
-        print("AQUI4")
-        game.tts("Estas numa casa que não podes comprar")
-    else:
-        print("AQUI5")
-        game.tts("Não podes comprar casas neste momento")
+    except:
+        game.tts("Não tens propriedades para comprar")
+    
+    time.sleep(3)
+    game.tts("Continua a jogar")

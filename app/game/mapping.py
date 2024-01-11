@@ -55,10 +55,10 @@ class Buttons(MapObject):
         except Exception:
             return self.find_element('/html/body/div[1]/div[1]/div[2]/span[1]/a')
         
-    @property
-    def buy(self):
+    @property 
+    def buy(self): # PROBLEM HERE
         return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[1]/div/div[2]/div[2]/div[1]/div/button')
-
+        
     @property
     def create_private_game(self):
         return self.find_element('/html/body/div[2]/div[4]/div[1]/div[1]/div[2]/div[1]/div/div[2]/div[1]/button[2]')
