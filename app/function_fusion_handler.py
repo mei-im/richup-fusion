@@ -77,4 +77,14 @@ def select_color_handler(game, command):
         game.tts(random_not_valid_color())
 
 def completed_handler(game):
-    game.tts("NOT IMPLEMENTED")
+    game.roll_dice()
+    time.sleep(5)
+    if game.button.buy:
+        game.buy()
+    time.sleep(3)
+    if "roll" in game.button.roll_dice.text.lower():
+        roll_dice_and_buy_house(game)
+    if "end" in game.button.end_turn.text.lower():
+        game.end_turn()
+    
+    

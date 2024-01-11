@@ -61,7 +61,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][amarelo]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][amarelo]" event="timeout-sspeech[speech][choose_color][amarelo]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][amarelo]" event="timeout-sspeech[speech][choose_color][amarelo]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][amarelo]-final" event="timeout-sspeech[speech][choose_color][amarelo]" />
     <transition target="sspeech[speech][choose_color][amarelo]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -90,7 +90,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][ciano]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][ciano]" event="timeout-sspeech[speech][choose_color][ciano]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][ciano]" event="timeout-sspeech[speech][choose_color][ciano]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][ciano]-final" event="timeout-sspeech[speech][choose_color][ciano]" />
     <transition target="sspeech[speech][choose_color][ciano]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -119,7 +119,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][verde]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][verde]" event="timeout-sspeech[speech][choose_color][verde]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][verde]" event="timeout-sspeech[speech][choose_color][verde]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][verde]-final" event="timeout-sspeech[speech][choose_color][verde]" />
     <transition target="sspeech[speech][choose_color][verde]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -177,7 +177,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][roxo]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][roxo]" event="timeout-sspeech[speech][choose_color][roxo]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][roxo]" event="timeout-sspeech[speech][choose_color][roxo]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][roxo]-final" event="timeout-sspeech[speech][choose_color][roxo]" />
     <transition target="sspeech[speech][choose_color][roxo]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -206,7 +206,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][purple]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][purple]" event="timeout-sspeech[speech][choose_color][purple]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][purple]" event="timeout-sspeech[speech][choose_color][purple]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][purple]-final" event="timeout-sspeech[speech][choose_color][purple]" />
     <transition target="sspeech[speech][choose_color][purple]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -235,7 +235,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][amaerela]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][amaerela]" event="timeout-sspeech[speech][choose_color][amaerela]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][amaerela]" event="timeout-sspeech[speech][choose_color][amaerela]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][amaerela]-final" event="timeout-sspeech[speech][choose_color][amaerela]" />
     <transition target="sspeech[speech][choose_color][amaerela]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -264,7 +264,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][pink]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][pink]" event="timeout-sspeech[speech][choose_color][pink]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][pink]" event="timeout-sspeech[speech][choose_color][pink]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][pink]-final" event="timeout-sspeech[speech][choose_color][pink]" />
     <transition target="sspeech[speech][choose_color][pink]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -293,7 +293,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][marrom]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][marrom]" event="timeout-sspeech[speech][choose_color][marrom]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][marrom]" event="timeout-sspeech[speech][choose_color][marrom]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][marrom]-final" event="timeout-sspeech[speech][choose_color][marrom]" />
     <transition target="sspeech[speech][choose_color][marrom]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -322,7 +322,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][blue]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][blue]" event="timeout-sspeech[speech][choose_color][blue]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][blue]" event="timeout-sspeech[speech][choose_color][blue]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][blue]-final" event="timeout-sspeech[speech][choose_color][blue]" />
     <transition target="sspeech[speech][choose_color][blue]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -351,7 +351,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][castanha]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][castanha]" event="timeout-sspeech[speech][choose_color][castanha]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][castanha]" event="timeout-sspeech[speech][choose_color][castanha]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][castanha]-final" event="timeout-sspeech[speech][choose_color][castanha]" />
     <transition target="sspeech[speech][choose_color][castanha]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -380,7 +380,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][red]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][red]" event="timeout-sspeech[speech][choose_color][red]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][red]" event="timeout-sspeech[speech][choose_color][red]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][red]-final" event="timeout-sspeech[speech][choose_color][red]" />
     <transition target="sspeech[speech][choose_color][red]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -409,7 +409,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][water]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][water]" event="timeout-sspeech[speech][choose_color][water]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][water]" event="timeout-sspeech[speech][choose_color][water]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][water]-final" event="timeout-sspeech[speech][choose_color][water]" />
     <transition target="sspeech[speech][choose_color][water]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -438,7 +438,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][rosa]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][rosa]" event="timeout-sspeech[speech][choose_color][rosa]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][rosa]" event="timeout-sspeech[speech][choose_color][rosa]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][rosa]-final" event="timeout-sspeech[speech][choose_color][rosa]" />
     <transition target="sspeech[speech][choose_color][rosa]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -496,7 +496,7 @@
     <onentry>
       <log label="[sgestures[gestures][handsfrontselect]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sgestures[gestures][handsfrontselect]" event="timeout-sgestures[gestures][handsfrontselect]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sgestures[gestures][handsfrontselect]" event="timeout-sgestures[gestures][handsfrontselect]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="gestures[gestures][handsfrontselect]-final" event="timeout-sgestures[gestures][handsfrontselect]" />
     <transition target="sgestures[gestures][handsfrontselect]-speech[speech][choose_color][cyan]" event="[SPEECH][CHOOSE_COLOR][CYAN]" />
@@ -805,7 +805,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][vermelho]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][vermelho]" event="timeout-sspeech[speech][choose_color][vermelho]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][vermelho]" event="timeout-sspeech[speech][choose_color][vermelho]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][vermelho]-final" event="timeout-sspeech[speech][choose_color][vermelho]" />
     <transition target="sspeech[speech][choose_color][vermelho]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -863,7 +863,7 @@
     <onentry>
       <log label="[sspeech[speech][game_info]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][game_info]" event="timeout-sspeech[speech][game_info]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][game_info]" event="timeout-sspeech[speech][game_info]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][game_info]-final" event="timeout-sspeech[speech][game_info]" />
     <transition target="sspeech[speech][game_info]-gestures[gestures][handrightuphelp]" event="[GESTURES][HANDRIGHTUPHELP]" />
@@ -892,7 +892,7 @@
     <onentry>
       <log label="[sgestures[gestures][handrightuphelp]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sgestures[gestures][handrightuphelp]" event="timeout-sgestures[gestures][handrightuphelp]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sgestures[gestures][handrightuphelp]" event="timeout-sgestures[gestures][handrightuphelp]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="main" event="timeout-sgestures[gestures][handrightuphelp]" />
     <transition target="sgestures[gestures][handrightuphelp]-speech[speech][game_info]" event="[SPEECH][GAME_INFO]" />
@@ -923,7 +923,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][yellow]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][yellow]" event="timeout-sspeech[speech][choose_color][yellow]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][yellow]" event="timeout-sspeech[speech][choose_color][yellow]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][yellow]-final" event="timeout-sspeech[speech][choose_color][yellow]" />
     <transition target="sspeech[speech][choose_color][yellow]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -952,7 +952,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][hotpink]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][hotpink]" event="timeout-sspeech[speech][choose_color][hotpink]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][hotpink]" event="timeout-sspeech[speech][choose_color][hotpink]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][hotpink]-final" event="timeout-sspeech[speech][choose_color][hotpink]" />
     <transition target="sspeech[speech][choose_color][hotpink]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -981,7 +981,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][green]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][green]" event="timeout-sspeech[speech][choose_color][green]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][green]" event="timeout-sspeech[speech][choose_color][green]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][green]-final" event="timeout-sspeech[speech][choose_color][green]" />
     <transition target="sspeech[speech][choose_color][green]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1039,7 +1039,7 @@
     <onentry>
       <log label="[sspeech[speech][completed]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][completed]" event="timeout-sspeech[speech][completed]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][completed]" event="timeout-sspeech[speech][completed]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="main" event="timeout-sspeech[speech][completed]" />
     <transition target="sspeech[speech][completed]-gestures[gestures][handonedirectionrolldice]" event="[GESTURES][HANDONEDIRECTIONROLLDICE]" />
@@ -1060,7 +1060,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][cyan]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][cyan]" event="timeout-sspeech[speech][choose_color][cyan]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][cyan]" event="timeout-sspeech[speech][choose_color][cyan]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][cyan]-final" event="timeout-sspeech[speech][choose_color][cyan]" />
     <transition target="sspeech[speech][choose_color][cyan]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1089,7 +1089,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][roxa]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][roxa]" event="timeout-sspeech[speech][choose_color][roxa]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][roxa]" event="timeout-sspeech[speech][choose_color][roxa]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][roxa]-final" event="timeout-sspeech[speech][choose_color][roxa]" />
     <transition target="sspeech[speech][choose_color][roxa]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1118,7 +1118,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][lime]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][lime]" event="timeout-sspeech[speech][choose_color][lime]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][lime]" event="timeout-sspeech[speech][choose_color][lime]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][lime]-final" event="timeout-sspeech[speech][choose_color][lime]" />
     <transition target="sspeech[speech][choose_color][lime]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1147,7 +1147,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][vermelha]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][vermelha]" event="timeout-sspeech[speech][choose_color][vermelha]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][vermelha]" event="timeout-sspeech[speech][choose_color][vermelha]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][vermelha]-final" event="timeout-sspeech[speech][choose_color][vermelha]" />
     <transition target="sspeech[speech][choose_color][vermelha]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1176,7 +1176,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][brown]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][brown]" event="timeout-sspeech[speech][choose_color][brown]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][brown]" event="timeout-sspeech[speech][choose_color][brown]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][brown]-final" event="timeout-sspeech[speech][choose_color][brown]" />
     <transition target="sspeech[speech][choose_color][brown]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1205,7 +1205,7 @@
     <onentry>
       <log label="[sgestures[gestures][handonedirectionrolldice]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sgestures[gestures][handonedirectionrolldice]" event="timeout-sgestures[gestures][handonedirectionrolldice]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sgestures[gestures][handonedirectionrolldice]" event="timeout-sgestures[gestures][handonedirectionrolldice]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="gestures[gestures][handonedirectionrolldice]-final" event="timeout-sgestures[gestures][handonedirectionrolldice]" />
     <transition target="sgestures[gestures][handonedirectionrolldice]-speech[speech][buy_house]" event="[SPEECH][BUY_HOUSE]" />
@@ -1254,7 +1254,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][castanho]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][castanho]" event="timeout-sspeech[speech][choose_color][castanho]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][castanho]" event="timeout-sspeech[speech][choose_color][castanho]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][castanho]-final" event="timeout-sspeech[speech][choose_color][castanho]" />
     <transition target="sspeech[speech][choose_color][castanho]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1283,7 +1283,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][azul]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][azul]" event="timeout-sspeech[speech][choose_color][azul]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][azul]" event="timeout-sspeech[speech][choose_color][azul]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][azul]-final" event="timeout-sspeech[speech][choose_color][azul]" />
     <transition target="sspeech[speech][choose_color][azul]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1312,7 +1312,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][magenta]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][magenta]" event="timeout-sspeech[speech][choose_color][magenta]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][magenta]" event="timeout-sspeech[speech][choose_color][magenta]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][magenta]-final" event="timeout-sspeech[speech][choose_color][magenta]" />
     <transition target="sspeech[speech][choose_color][magenta]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1341,7 +1341,7 @@
     <onentry>
       <log label="[sgestures[gestures][handsjoin]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sgestures[gestures][handsjoin]" event="timeout-sgestures[gestures][handsjoin]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sgestures[gestures][handsjoin]" event="timeout-sgestures[gestures][handsjoin]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="gestures[gestures][handsjoin]-final" event="timeout-sgestures[gestures][handsjoin]" />
     <transition target="sgestures[gestures][handsjoin]-speech[speech][roll_dice]" event="[SPEECH][ROLL_DICE]" />
@@ -1380,7 +1380,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][água]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][água]" event="timeout-sspeech[speech][choose_color][água]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][água]" event="timeout-sspeech[speech][choose_color][água]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][água]-final" event="timeout-sspeech[speech][choose_color][água]" />
     <transition target="sspeech[speech][choose_color][água]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1409,7 +1409,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][verde_lima]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][verde_lima]" event="timeout-sspeech[speech][choose_color][verde_lima]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][verde_lima]" event="timeout-sspeech[speech][choose_color][verde_lima]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][verde_lima]-final" event="timeout-sspeech[speech][choose_color][verde_lima]" />
     <transition target="sspeech[speech][choose_color][verde_lima]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1438,7 +1438,7 @@
     <onentry>
       <log label="[sspeech[speech][roll_dice]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][roll_dice]" event="timeout-sspeech[speech][roll_dice]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][roll_dice]" event="timeout-sspeech[speech][roll_dice]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][roll_dice]-final" event="timeout-sspeech[speech][roll_dice]" />
     <transition target="sspeech[speech][roll_dice]-gestures[gestures][handsjoin]" event="[GESTURES][HANDSJOIN]" />
@@ -1477,7 +1477,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][laranja]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][laranja]" event="timeout-sspeech[speech][choose_color][laranja]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][laranja]" event="timeout-sspeech[speech][choose_color][laranja]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][laranja]-final" event="timeout-sspeech[speech][choose_color][laranja]" />
     <transition target="sspeech[speech][choose_color][laranja]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1506,7 +1506,7 @@
     <onentry>
       <log label="[sspeech[speech][buy_house]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][buy_house]" event="timeout-sspeech[speech][buy_house]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][buy_house]" event="timeout-sspeech[speech][buy_house]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][buy_house]-final" event="timeout-sspeech[speech][buy_house]" />
     <transition target="sspeech[speech][buy_house]-gestures[gestures][handonedirectionrolldice]" event="[GESTURES][HANDONEDIRECTIONROLLDICE]" />
@@ -1545,7 +1545,7 @@
     <onentry>
       <log label="[sspeech[speech][choose_color][orange]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][choose_color][orange]" event="timeout-sspeech[speech][choose_color][orange]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][choose_color][orange]" event="timeout-sspeech[speech][choose_color][orange]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][choose_color][orange]-final" event="timeout-sspeech[speech][choose_color][orange]" />
     <transition target="sspeech[speech][choose_color][orange]-gestures[gestures][handsfrontselect]" event="[GESTURES][HANDSFRONTSELECT]" />
@@ -1574,7 +1574,7 @@
     <onentry>
       <log label="[sspeech[speech][list_of_colors]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[speech][list_of_colors]" event="timeout-sspeech[speech][list_of_colors]" delay="10000" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[speech][list_of_colors]" event="timeout-sspeech[speech][list_of_colors]" delay="5000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[speech][list_of_colors]-final" event="timeout-sspeech[speech][list_of_colors]" />
     <transition target="sspeech[speech][list_of_colors]-gestures[gestures][handrightuphelp]" event="[GESTURES][HANDRIGHTUPHELP]" />
