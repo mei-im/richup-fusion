@@ -2,6 +2,7 @@ import time
 from game.game import Game
 from utils import *
 from dictionaries.dictionarys import colors
+from dictionaries.colors_dic import colors_in_pt
 
 from lists.fusion_list import list_fusion
 
@@ -59,6 +60,7 @@ def choose_color_handler(game, command):
     if color in colors:
         color = colors[color]
         game.choose_color(color)
+        color = colors_in_pt[color]
         game.tts(f"Selecionaste a cor {color}")
     else:
         game.tts(random_not_valid_color())
@@ -69,6 +71,7 @@ def select_color_handler(game, command):
     if color in colors:
         color = colors[color]
         game.choose_color(color)
+        color = colors_in_pt[color]
         game.tts(f"Selecionaste a cor {color}")
         time.sleep(2)
         game.tts("Espera que o entre na sala")

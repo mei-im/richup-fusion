@@ -115,9 +115,9 @@ class Buttons(MapObject):
     @property
     def close_help(self):
         try:
-            return self.find_element("/html/body/div[4]/div/div/button")
+            return self.find_element("/html/body/div[5]/div/div/button")
         except Exception:
-            return self.find_element("/html/body/div[5]/div/div/button") 
+            return self.find_element("/html/body/div[6]/div/div/button")
         
     @property    
     def close_trade(self):
