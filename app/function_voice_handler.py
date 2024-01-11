@@ -41,11 +41,10 @@ async def voice_handler(game: Game, message:dict):
             game.leave_prison()
         elif intent == "give_up_game": # NOT USED
             game.give_up_game()
-        elif  intent == "confirm":# TODO: CHANGE THIS
-            game.confirm_give_up_game()
-            game.tts("Podes fechar o jogo, ou continuar a ver o jogo a decorrer.")
-        elif  intent == "deny": # TODO: CHANGE THIS
-            game.cancel_give_up_game()
+        elif  intent == "confirm":
+            game.confirm()
+        elif  intent == "deny":
+            game.cancel()
         elif intent == "goodbye": # DONE
             game.tts("Adeus, até à próxima.")
             game.close()
@@ -61,13 +60,11 @@ async def voice_handler(game: Game, message:dict):
             game.unmute()
         elif intent == "help": # DONE
             game.help()
-        elif intent == "close_game": # NOT IMPLEMENTED
-            game.tss("Ainda não implementado")
         elif intent == "change_to_initial_page": #DONE
             game.page_initial()
         elif intent == "greet": # DONE
             game.tts(random_greet())
-        elif intent == "close_information":
+        elif intent == "close_information" or intent == "close_game": # DONE
             game.close_information()
         else:
             game.tts(random_not_understand())

@@ -77,7 +77,6 @@ class Game:
                 color = self.colors.__getattribute__(color)
                 color.click()
                 self.tts(f"Ficaste com a cor {name_color}")
-                # TODO CRIAR NOVA FORMAR DE CHAMAR O BOTAO
                 time.sleep(3)
                 self.join_game()
             else:
@@ -108,13 +107,12 @@ class Game:
             except:
                 self.tts(random_start_game_not_auth())
 
-    def leave_prison(self):
+    def leave_prison(self): # DONE
         if self.get_url() == "https://richup.io/":
             self.tts(random_create_room())
             return
         
         try:
-            print(self.button.prison_pay.text.lower())
             if 'get free' in self.button.prison_pay.text.lower():
                 self.button.prison_pay.click()
                 self.tts("Pagaste para sair da prisão")
@@ -123,23 +121,31 @@ class Game:
         except:
             self.tts("Não é permitido, sair da prisão neste momento")
 
-    def confirm_give_up_game(self):
-        print("confirm")
+    def confirm(self): # DONE
         try:
             self.button.confirm_bankrupt.click()
             self.tts(random_give_up_confirm())
+            time.sleep(3)
+            self.tts("Podes fechar o jogo, ou continuar a ver o jogo a decorrer.")
         except:
-            print("Not in game")
-            self.tts(random_give_up_not_in_game())
+            try:
+                self.button.confirm_trade.click()
+                self.tts("A negociação foi aceite")
+            except:
+                self.tts("Não tem nenhuma informação para confirmar")
 
-    def cancel_give_up_game(self):
+    def cancel(self): # DONE
         try:
             self.button.cancel_bankrupt.click()
             self.tts(random_give_up_cancel())
         except:
-            self.tts(random_give_up_not_in_game())
+            try:
+                self.button.cancel_trade.click()
+                self.tts("A negociação não foi aceite")
+            except:
+                self.tts("Não tem nenhuma informação para cancelar")
 
-    def close(self): 
+    def close(self):  # DONE
         self.browser.close()
 
     def mute_func(self): # DONE
@@ -181,7 +187,7 @@ class Game:
         house.click()
         self.tts("A informação da propriedade foi minimizada")
 
-    def change_color_number(self, number:int, increase:bool):
+    def change_color_number(self, number:int, increase:bool): #DONE
         if self.get_url() == "https://richup.io/":
             self.tts(random_create_room())
             return
@@ -207,7 +213,7 @@ class Game:
         except:
             self.tts("Não é permitido, mudar de cor neste momento")
 
-    def get_color_activate(self)->int:
+    def get_color_activate(self)->int: #DONE
         color_number = -1
         for i in range(1,13):
             try:
@@ -236,7 +242,7 @@ class Game:
         self.browser.execute_script("arguments[0].style.border='4px solid red'", div_element)
         self.name_house = name_house
             
-    def house_handler(self, number:int, increase:bool):
+    def house_handler(self, number:int, increase:bool): #DONE
         current_house = self.get_activate_house()
         if increase:
             current_house += number
@@ -251,7 +257,7 @@ class Game:
         name_house = houses_number[current_house]
         self.activate_house(name_house)
         
-    def help(self): 
+    def help(self):  # DONE
         if self.get_url() == "https://richup.io/":
             self.tts(random_create_room())
             return
@@ -299,7 +305,7 @@ class Game:
         except:
             self.tts("Não é permitido entrar na sala, enquanto não estás numa sala ou num jogo a decorrer")
 
-    def end_turn(self):
+    def end_turn(self): #DONE
         if self.get_url() == "https://richup.io/":
             self.tts(random_create_room())
             return
@@ -321,7 +327,7 @@ class Game:
             except:
                 self.tts(random_end_turn_other_player())
 
-    def roll_dice(self):
+    def roll_dice(self): # DONE
         if self.get_url() == "https://richup.io/":
             self.tts(random_create_room())
             return
@@ -343,7 +349,7 @@ class Game:
             except:
                 self.tts(random_roll_dice_not_auth())
 
-    def buy(self):
+    def buy(self): # DONE
         if self.get_url() == "https://richup.io/":
             self.tts(random_create_room())
             return
@@ -365,28 +371,28 @@ class Game:
             except:
                 self.tts(random_buy_house_not_in_game())
 
-    def help_colors(self):
+    def help_colors(self): # DONE
         string_colors = ", ".join(available_colors_pt)
         self.tts(f"As cores disponíveis são: {string_colors}")
 
-    def page_initial(self):
+    def page_initial(self): #DONE
+        if self.get_url() == "https://richup.io/":
+            self.tts("Já te encontras na página inicial")
+            return
         self.browser.get('https://richup.io/')
         time.sleep(2)
         self.tts("Já podes começar um novo jogo")
 
-    def close_information(self):
+    def close_information(self): #DONE
         try:
-            print("close_help")
             self.button.close_help.click()
             self.tts("A informação do Jogo foi fechada")
         except:
             try:
-                print("close_brankrupt")
                 self.button.close_bankrupt.click()
                 self.tts("A janela de desistir do jogo foi fechada. Pode continuar a jogar")
             except:
                 try:
-                    print("close_trade")
                     self.button.close_trade.click()
                     self.tts("A janela de negociação foi fechada. Pode continuar a jogar")
                 except:

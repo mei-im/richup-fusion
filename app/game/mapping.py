@@ -73,24 +73,32 @@ class Buttons(MapObject):
 
     @property
     def confirm_bankrupt(self):
-        return self.find_element('/html/body/div[6]/div/div/div/button[1]')
+        try:
+            return self.find_element('/html/body/div[6]/div/div/div/button[1]')
+        except Exception:
+            return self.find_element('/html/body/div[7]/div/div/div/button[1]')
     
     @property
     def cancel_bankrupt(self):
-        return self.find_element('/html/body/div[6]/div/div/div/button[2]')
+        try:
+            return self.find_element('/html/body/div[6]/div/div/div/button[2]')
+        except Exception:
+            return self.find_element('/html/body/div[7]/div/div/div/button[2]')
     
     @property
     def confirm_trade(self):
-        return self.find_element('/html/body/div[9]/div/div/div/button[1]')
+        return self.find_element('/html/body/div[9]/div/div/div/div/div[4]/div[1]/div[1]/button')
     
     @property
     def cancel_trade(self):
-        return self.find_element('/html/body/div[9]/div/div/div/button[2]')
-    
+        return self.find_element('/html/body/div[9]/div/div/div/div/div[4]/div[2]/div[1]/button')
     
     @property
     def prison_pay(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[1]/div/div[2]/div[2]/div[1]/div/div/button')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[1]/div/div[2]/div[2]/div[1]/div/div/button')
+        except Exception:
+            return self.find_element("/html/body/div[3]/div[4]/div/div[2]/div/div/div[1]/div/div[2]/div[2]/div[1]/div/div/button")
 
     @property
     def mute(self):
