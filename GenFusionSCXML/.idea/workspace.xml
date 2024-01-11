@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a517ec0f-b879-4a88-891e-0aa773b36920" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GenFusionSCXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GenFusionSCXML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modalities/Gestures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modalities/Gestures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modalities/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modalities/Output.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/function_fusion_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../app/function_fusion_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/function_gesture_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../app/function_gesture_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/function_voice_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../app/function_voice_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lists/fusion_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/../app/lists/fusion_list.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +53,7 @@
       <updated>1704908966652</updated>
       <workItem from="1704908969101" duration="287000" />
       <workItem from="1704922661301" duration="774000" />
-      <workItem from="1704977774342" duration="1270000" />
+      <workItem from="1704977774342" duration="1879000" />
     </task>
     <servers />
   </component>

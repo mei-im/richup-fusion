@@ -1,4 +1,3 @@
-import logging
 import time
 from game.game import Game
 from utils import *
@@ -7,7 +6,6 @@ from dictionaries.dictionarys import colors
 from lists.fusion_list import list_fusion
 
 async def fusion_handler(game: Game, command: str):
-    # log.info(f"Fusion received: {command}")
     print(f"Fusion received: {command}")
 
     if command in list_fusion:
@@ -25,32 +23,14 @@ async def fusion_handler(game: Game, command: str):
             game.help_colors()
         elif command == "ROLL_DICE_BUY_HOUSE": #DONE
             roll_dice_and_buy_house(game)
-        elif command == "SELECT":
+        elif command == "SELECT": # DONE
             hand_front_select_handler(game)
-        elif "CHANGE_COLOR" in command:
-            command = command.split("_")
-            color = command[-1]
-            if color in colors:
-                color = colors[color]
-                game.choose_color(color)
-                game.tts(f"Selecionaste a cor {color}")
-            else:
-                game.tts(random_not_valid_color())
-        elif "SELECT_COLOR" in command:
-            command = command.split("_")
-            color = command[-1]
-            if color in colors:
-                color = colors[color]
-                game.choose_color(color)
-                game.tts(f"Selecionaste a cor {color}")
-                time.sleep(2)
-                game.tts("Espera que o entre na sala")
-                game.join_game()
-            else:
-                game.tts(random_not_valid_color())
+    elif "CHOOSE_COLOR" in command: #DONE
+        choose_color_handler(game, command)
+    elif "SELECT_COLOR" in command: #DONE
+        select_color_handler(game, command)
     else:
-        game.tts("Não percebi o comando") # TODO: CREATE A RANDOM FUNCTION
-        # log.info(f"Command not found: {gesture}")
+        game.tts("Não percebi o comando")
         print(f"Command not found: {command}")
 
 def roll_dice_and_buy_house(game: Game): 
@@ -70,3 +50,26 @@ def hand_front_select_handler(game):
     else:
         name_house = game.name_house
         game.list_house_information(name_house)
+
+def choose_color_handler(game, command):
+    command = command.split("_")
+    color = command[-1].lower()
+    if color in colors:
+        color = colors[color]
+        game.choose_color(color)
+        game.tts(f"Selecionaste a cor {color}")
+    else:
+        game.tts(random_not_valid_color())
+
+def select_color_handler(game, command):
+    command = command.split("_")
+    color = command[-1].lower()
+    if color in colors:
+        color = colors[color]
+        game.choose_color(color)
+        game.tts(f"Selecionaste a cor {color}")
+        time.sleep(2)
+        game.tts("Espera que o entre na sala")
+        game.join_game()
+    else:
+        game.tts(random_not_valid_color())

@@ -32,9 +32,11 @@ public class GenFusionSCXML {
     
     fg.Complementary(Gestures.ROLL_DICE, Speech.BUY_HOUSE, Output.ROLL_DICE_BUY_HOUSE);
     fg.Complementary(Speech.ROLL_DICE, Gestures.BUY_HOUSE, Output.ROLL_DICE_BUY_HOUSE);
+    // fg.Complementary(Gestures.ROLL_DICE, Speech.COMPLETED, Output.ROLL_DICE_COMPLETED);
 
-    // .......................colors........................
+        // .......................colors........................
     fg.Complementary(Gestures.SELECT, Speech.CHOOSE_COLOR_CYAN, Output.SELECT_COLOR_CYAN);
+    fg.Complementary(Gestures.SELECT, Speech.CHOOSE_COLOR_AZUL, Output.SELECT_COLOR_AZUL);
 
 
   
@@ -52,7 +54,9 @@ public class GenFusionSCXML {
     fg.Single(Speech.GAME_INFO_HELP, Output.GAME_INFO);
     fg.Single(Speech.LIST_OF_COLORS_HELP, Output.LIST_OF_COLORS);
     fg.Single(Gestures.SELECT, Output.SELECT);
+        // .......................colors........................
     fg.Single(Speech.CHOOSE_COLOR_CYAN, Output.CHOOSE_COLOR_CYAN);
+    fg.Single(Speech.CHOOSE_COLOR_AZUL, Output.CHOOSE_COLOR_AZUL);
 
 
   

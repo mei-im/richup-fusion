@@ -10,5 +10,6 @@ list_fusion = [
 
     "LIST_OF_COLORS", # single
     "GAME_INFO", # single
+    "SELECT", # single
     
     ]
