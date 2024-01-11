@@ -90,8 +90,8 @@ public enum Speech implements IModality{
     // ------------------------REDUDANTES------------------------
     ROLL_DICE("[SPEECH][ROLL_DICE]", 10000),
     BUY_HOUSE("[SPEECH][BUY_HOUSE]", 10000),
-    END_TURN("[SPEECH][END_TURN]", 10000),
-    GIVE_UP_GAME("[SPEECH][GIVE_UP_GAME]", 10000),
+    END_TURN("[SPEECH][END_TURN]", 3000),
+    GIVE_UP_GAME("[SPEECH][GIVE_UP_GAME]", 3000),
 
 
     // -----------------------COMPLEMENTARES----------------------

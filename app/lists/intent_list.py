@@ -18,4 +18,5 @@ list_intent = ["insert_name",
                 "unmute",
                 "goodbye", 
                 "greet", 
+                "change_to_initial_page"
                 ]

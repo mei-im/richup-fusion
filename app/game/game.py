@@ -369,4 +369,9 @@ class Game:
         string_colors = ", ".join(available_colors_pt)
         self.tts(f"As cores disponíveis são: {string_colors}")
 
+    def page_initial(self):
+        self.browser.get('https://richup.io/')
+        time.sleep(2)
+        self.tts("Já podes começar um novo jogo")
+
         

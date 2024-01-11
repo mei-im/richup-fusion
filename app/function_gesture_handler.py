@@ -28,7 +28,7 @@ async def gesture_handler(game: Game, gesture:str):
             hand_left_shoulder_decrease_handler(game)
         elif name_of_gesture == "HANDRIGHTSHOULDERLEVELINCREASE": #DONE
             hand_right_shoulder_increase_handler(game)
-        elif name_of_gesture == "HANDSDIFFERENTDIRECTIONSCLOSE":    # NOT USED
+        elif name_of_gesture == "HANDSDIFFERENTDIRECTIONSCLOSE": #NOT USED
             game.end_turn()
         elif name_of_gesture == "HANDONEDIRECTIONROLLDICE": # NOT USED
             game.roll_dice()

@@ -74,6 +74,9 @@ async def voice_handler(game: Game, message:dict):
         elif intent == "close_game": # NOT IMPLEMENTED
             game.tss("Ainda não implementado")
             intent_before = intent
+        elif intent == "change_to_initial_page": #
+            game.page_initial()
+            intent_before = intent
         elif intent == "greet": # DONE
             game.tts(random_greet())
         else:
