@@ -153,91 +153,157 @@ class Houses(MapObject):
     
     @property
     def venice(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[1]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[1]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[5]/div[1]/div[3]/div[1]')
     
     @property
     def electric_company(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[2]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[2]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[5]/div[2]/div[3]/div[1]')
 
     @property
     def milan(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[3]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[3]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[5]/div[3]/div[3]/div[1]')
     
     @property
     def rome(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[4]/div[3]/div[1]')
+        try:    
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[4]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[5]/div[4]/div[3]/div[1]')
     
     @property
     def muc_airport(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[5]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[5]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[5]/div[5]/div[3]/div[1]')
     
     @property
     def frankfurt(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[6]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[6]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[5]/div[6]/div[3]/div[1]')
     
     @property
     def munich(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[8]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[8]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[5]/div[8]/div[3]/div[1]')
     
     @property
     def berlin(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[9]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[5]/div[9]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[5]/div[9]/div[3]/div[1]')
     
     @property
     def shenzhen(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[1]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[1]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[7]/div[1]/div[3]/div[1]')
     
     @property
     def beijing(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[3]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[3]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[7]/div[3]/div[3]/div[1]')
     
     @property
     def shanghai(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[4]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[4]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[7]/div[4]/div[3]/div[1]')
     
     @property
     def cdg_airport(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[5]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[5]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[7]/div[5]/div[3]/div[1]')
     
     @property
     def lyon(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[6]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[6]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[7]/div[6]/div[3]/div[1]')
     
     @property
     def toulouse(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[7]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[7]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[7]/div[7]/div[3]/div[1]')
     
     @property
     def water_company(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[8]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[8]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[7]/div[8]/div[3]/div[1]')
     
     @property
     def paris(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[9]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[7]/div[9]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[7]/div[9]/div[3]/div[1]')
     
     @property
     def liverpool(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[9]/div[1]/div[3]/div[1]')
-    
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[9]/div[1]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[9]/div[1]/div[3]/div[1]')
+        
     @property
     def manchester(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[9]/div[2]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[9]/div[2]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[9]/div[2]/div[3]/div[1]')
     
     @property
     def london(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[9]/div[4]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[9]/div[4]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[9]/div[4]/div[3]/div[1]')
     
     @property
     def jfk_airport(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[9]/div[5]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[9]/div[5]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[9]/div[5]/div[3]/div[1]')
     
     @property
     def san_francisco(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[9]/div[7]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[9]/div[7]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[9]/div[7]/div[3]/div[1]')
     
     @property
     def new_york(self):
-        return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[9]/div[9]/div[3]/div[1]')
+        try:
+            return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[9]/div[9]/div[3]/div[1]')
+        except Exception:
+            return self.find_element('/html/body/div[3]/div[4]/div/div[2]/div/div/div[9]/div[9]/div[3]/div[1]')
 
 class Colors(MapObject):
     # TODO MUDAR CORES PARTE 2

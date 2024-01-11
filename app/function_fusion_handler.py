@@ -4,12 +4,11 @@ from game.game import Game
 
 from lists.fusion_list import list_fusion
 
-async def voice_handler(game: Game, command: str):
+async def fusion_handler(game: Game, command: str):
     # log.info(f"Fusion received: {command}")
     print(f"Fusion received: {command}")
 
     if command in list_fusion:
-        game.fusion(command)
         if command == "ROLL_DICE":
             game.roll_dice()
         elif command == "END_TURN":
