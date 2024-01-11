@@ -25,6 +25,8 @@ async def fusion_handler(game: Game, command: str):
             roll_dice_and_buy_house(game)
         elif command == "SELECT": # DONE
             hand_front_select_handler(game)
+        elif command == "ROLL_DICE_COMPLETED": #DONE
+            completed_handler(game)
     elif "CHOOSE_COLOR" in command: #DONE
         choose_color_handler(game, command)
     elif "SELECT_COLOR" in command: #DONE
@@ -73,3 +75,6 @@ def select_color_handler(game, command):
         game.join_game()
     else:
         game.tts(random_not_valid_color())
+
+def completed_handler(game):
+    game.tts("NOT IMPLEMENTED")

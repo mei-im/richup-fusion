@@ -28,6 +28,7 @@ intents:
 - unmute
 - close_information
 - change_to_initial_page
+- completed
 
 entities:
 # - place

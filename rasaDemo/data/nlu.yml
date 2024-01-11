@@ -345,4 +345,14 @@ nlu:
     - Por favor, quero voltar à página inicial
     - Quero criar um novo jogo
 
+- intent: completed
+  examples: |
+    - Assistente, completa a minha jogada
+    - Assistente, completa a minha jogada, por favor
+    - Faz a melhor jogada
+    - Faz a melhor jogada, por favor
+    - Por favor, completa a minha jogada
+    - Completa a jogada da melhor maneira
+    - Completa a jogada da melhor maneira, por favor
+    - Faz a jogada por mim
 
