@@ -374,4 +374,23 @@ class Game:
         time.sleep(2)
         self.tts("Já podes começar um novo jogo")
 
+    def close_information(self):
+        try:
+            print("close_help")
+            self.button.close_help.click()
+            self.tts("A informação do Jogo foi fechada")
+        except:
+            try:
+                print("close_brankrupt")
+                self.button.close_bankrupt.click()
+                self.tts("A janela de desistir do jogo foi fechada. Pode continuar a jogar")
+            except:
+                try:
+                    print("close_trade")
+                    self.button.close_trade.click()
+                    self.tts("A janela de negociação foi fechada. Pode continuar a jogar")
+                except:
+                    self.tts("Não tens nenhuma janela aberta")
+
+
         

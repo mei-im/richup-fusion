@@ -323,7 +323,6 @@ nlu:
     - Podes voltar a falar, por favor
     - Agora acho que já podes falar
 
-
 - intent: close_information
   examples: |
     - Fechar

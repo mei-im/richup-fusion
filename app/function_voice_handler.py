@@ -37,48 +37,38 @@ async def voice_handler(game: Game, message:dict):
             game.end_turn()
         elif intent == "buy_house": # NOT USED
             game.buy()
-            intent_before = intent
         elif intent == "leave_prison":
             game.leave_prison()
-            intent_before = intent
         elif intent == "give_up_game": # NOT USED
             game.give_up_game()
-            intent_before = intent
-        elif  intent == "confirm" and "give_up_game" in intent_before:  # TODO: CHANGE THIS
+        elif  intent == "confirm":# TODO: CHANGE THIS
             game.confirm_give_up_game()
             game.tts("Podes fechar o jogo, ou continuar a ver o jogo a decorrer.")
-            intent_before = intent
-        elif  intent == "deny" and "give_up_game" in intent_before: # TODO: CHANGE THIS
+        elif  intent == "deny": # TODO: CHANGE THIS
             game.cancel_give_up_game()
-            intent_before = intent
         elif intent == "goodbye": # DONE
-            game.tts("Adeus")
+            game.tts("Adeus, até à próxima.")
             game.close()
             global not_quit
             not_quit = False
         elif intent == "list_of_colors": # NOT USED
             game.help_colors()
-            intent_before = intent
         elif intent == "game_info": # NOT USED
             game.help()
-            intent_before = intent
         elif intent == "mute": # DONE
             game.mute_func()
-            intent_before = intent
         elif intent == "unmute": # DONE
             game.unmute()
-            intent_before = intent
         elif intent == "help": # DONE
             game.help()
-            intent_before = intent
         elif intent == "close_game": # NOT IMPLEMENTED
             game.tss("Ainda não implementado")
-            intent_before = intent
-        elif intent == "change_to_initial_page": #
+        elif intent == "change_to_initial_page": #DONE
             game.page_initial()
-            intent_before = intent
         elif intent == "greet": # DONE
             game.tts(random_greet())
+        elif intent == "close_information":
+            game.close_information()
         else:
             game.tts(random_not_understand())
             # log.info(f"Command not found: {message}")

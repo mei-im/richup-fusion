@@ -80,6 +80,15 @@ class Buttons(MapObject):
         return self.find_element('/html/body/div[6]/div/div/div/button[2]')
     
     @property
+    def confirm_trade(self):
+        return self.find_element('/html/body/div[9]/div/div/div/button[1]')
+    
+    @property
+    def cancel_trade(self):
+        return self.find_element('/html/body/div[9]/div/div/div/button[2]')
+    
+    
+    @property
     def prison_pay(self):
         return self.find_element('/html/body/div[2]/div[4]/div/div[2]/div/div/div[1]/div/div[2]/div[2]/div[1]/div/div/button')
 
@@ -100,8 +109,22 @@ class Buttons(MapObject):
         try:
             return self.find_element("/html/body/div[4]/div/div/button")
         except Exception:
-            return self.find_element("/html/body/div[5]/div/div/button")        
-    
+            return self.find_element("/html/body/div[5]/div/div/button") 
+        
+    @property    
+    def close_trade(self):
+        try:
+            return self.find_element("/html/body/div[9]/div/div/button")
+        except Exception:
+            return self.find_element("/html/body/div[10]/div/div/button")
+        
+    @property  
+    def close_bankrupt(self):
+        try: 
+            return self.find_element("/html/body/div[7]/div/div/button")
+        except Exception:
+            return self.find_element("/html/body/div[8]/div/div/button")
+        
 class Inputs(MapObject):
     @property
     def name(self):
