@@ -19,6 +19,7 @@ public enum Gestures implements IModality{
 
     // ----------------COMPLEMENTARES----------------
     HELP("[GESTURES][HANDRIGHTUPHELP]", 10000),
+    SELECT("[GESTURES][HANDSFRONTSELECT]", 10000),
 
     ;
     

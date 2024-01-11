@@ -1,5 +1,6 @@
 from utils import *
 import logging
+import time
 
 from game.game import Game
 from dictionaries.dictionarys import houses,colors
@@ -25,7 +26,7 @@ async def voice_handler(game: Game, message:dict):
             insert_name_handler(game, message, intent)
         elif intent == "create_room": # DONE
             game.create_game()
-        elif intent == "choose_color": # DONE
+        elif intent == "choose_color": # NOT USED
             choose_color_handler(game, message, intent)
         elif intent == "information_house": # DONE
             information_house_handler(game, message, intent)
@@ -37,13 +38,13 @@ async def voice_handler(game: Game, message:dict):
             game.end_turn()
         elif intent == "buy_house": # NOT USED
             game.buy()
-        elif intent == "leave_prison":
+        elif intent == "leave_prison": # DONE
             game.leave_prison()
         elif intent == "give_up_game": # NOT USED
             game.give_up_game()
-        elif  intent == "confirm":
+        elif  intent == "confirm": # DONE
             game.confirm()
-        elif  intent == "deny":
+        elif  intent == "deny": # DONE
             game.cancel()
         elif intent == "goodbye": # DONE
             game.tts("Adeus, até à próxima.")
@@ -100,6 +101,9 @@ def choose_color_handler(game, message, intent):
             if color_name in colors:
                 color_name = colors[color_name]
                 game.choose_color(color_name)
+                game.tts(f"Ficaste com a cor {color_name}")
+                time.sleep(3)
+                game.join_game()
             else:
                 game.tts(random_not_valid_color())
         else:

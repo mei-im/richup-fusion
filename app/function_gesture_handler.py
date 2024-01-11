@@ -22,7 +22,7 @@ async def gesture_handler(game: Game, gesture:str):
             game.help()
         elif name_of_gesture == "HANDSUPGIVEUP": # NOT USED
             game.give_up_game()
-        elif name_of_gesture == "HANDSFRONTSELECT": # DONE
+        elif name_of_gesture == "HANDSFRONTSELECT": # NOT USED
             hand_front_select_handler(game)
         elif name_of_gesture == "HANDLEFTSHOULDERLEVELDECREASE": #DONE 
             hand_left_shoulder_decrease_handler(game)

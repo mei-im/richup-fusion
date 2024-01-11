@@ -76,9 +76,6 @@ class Game:
                 name_color = colors_in_pt[color]
                 color = self.colors.__getattribute__(color)
                 color.click()
-                self.tts(f"Ficaste com a cor {name_color}")
-                time.sleep(3)
-                self.join_game()
             else:
                 self.tts("Não é permitido mudar de cor, neste momento")
                 
