@@ -13,6 +13,7 @@ async def gesture_handler(game: Game, gesture:str):
     print(f"Gesture received: {gesture}")
     name_of_gesture = gesture["recognized"][1]
     confidence = float(gesture["confidence"].replace(",", "."))
+    print(f"Name of gesture: {name_of_gesture} - Confidence: {confidence}")
 
     if confidence < MIN_CONFIDENCE:
         game.tts(random_not_understand())
@@ -21,11 +22,11 @@ async def gesture_handler(game: Game, gesture:str):
             game.help()
         elif name_of_gesture == "HANDSUPGIVEUP": # NOT USED
             game.give_up_game()
-        elif name_of_gesture == "HANDSFRONTSELECT":
+        elif name_of_gesture == "HANDSFRONTSELECT": # DONE
             hand_front_select_handler(game)
-        elif name_of_gesture == "HANDLEFTSHOULDERLEVELDECREASE":
+        elif name_of_gesture == "HANDLEFTSHOULDERLEVELDECREASE": #DONE 
             hand_left_shoulder_decrease_handler(game)
-        elif name_of_gesture == "HANDRIGHTSHOULDERLEVELINCREASE":
+        elif name_of_gesture == "HANDRIGHTSHOULDERLEVELINCREASE": #DONE
             hand_right_shoulder_increase_handler(game)
         elif name_of_gesture == "HANDSDIFFERENTDIRECTIONSCLOSE":    # NOT USED
             game.end_turn()

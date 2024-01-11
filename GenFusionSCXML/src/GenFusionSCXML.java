@@ -35,7 +35,7 @@ public class GenFusionSCXML {
   
 
 
-     // -------------------- REDUNDANTES --------------------
+    // -------------------- REDUNDANTES --------------------
     fg.Redundancy(Speech.ROLL_DICE, Gestures.ROLL_DICE, Output.ROLL_DICE);
     fg.Redundancy(Speech.BUY_HOUSE, Gestures.BUY_HOUSE, Output.BUY_HOUSE);
     fg.Redundancy(Speech.END_TURN, Gestures.END_TURN, Output.END_TURN);
@@ -157,7 +157,7 @@ public class GenFusionSCXML {
    // fg.Single(Touch.OPEN_NEWS_TITLE, Output.OPEN_NEWS_AS_TEXT);
     
    // fg.Redundancy(Touch.GO_BACK, Speech.ACTION_GENERICENTITY_BACK, Output.GO_BACK);
-    fg.Build("fusion_novo.scxml");
+    fg.Build("fusion.scxml");
         
     }
     

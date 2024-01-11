@@ -26,7 +26,7 @@ async def fusion_handler(game: Game, command: str):
         elif command == "COMPLETED_TURN":
             # TODO: IMPLEMENTAR
             game.tss("Ainda não implementado")
-        elif command == "INICIALIZATION_GAME": 
+        elif command == "INITIALIZATION_GAME": 
             # TODO: IMPLEMENTAR
             game.tss("Ainda não implementado")
     else:

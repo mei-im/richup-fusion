@@ -218,26 +218,23 @@ class Game:
                 return i
         return color_number
 
-# TODO VERIFICAR SE ESTA A FUNCIONAR COM GESTOS
-    def get_activate_house(self):
+    def get_activate_house(self): #DONE
         for i in range(len(houses_number)):
             div_element = self.house.__getattribute__(houses_number[i])
             if div_element.get_attribute("style") == "border: 4px solid red;":
+                self.name_house = houses_number[i]
                 return i
         return -1
     
-    def activate_house(self, name_house:str):
+    def activate_house(self, name_house:str): #DONE
         current_house = self.get_activate_house()
         if current_house != -1:
             div_element = self.house.__getattribute__(houses_number[current_house])
             self.browser.execute_script("arguments[0].style.border='0px'", div_element)
 
-        if name_house != None:
-            div_element = self.house.__getattribute__(name_house)
-            self.browser.execute_script("arguments[0].style.border='4px solid red'", div_element)
-            self.name_house = houses_number[current_house]
-        else:
-            self.name_house = None
+        div_element = self.house.__getattribute__(name_house)
+        self.browser.execute_script("arguments[0].style.border='4px solid red'", div_element)
+        self.name_house = name_house
             
     def house_handler(self, number:int, increase:bool):
         current_house = self.get_activate_house()
@@ -252,7 +249,7 @@ class Game:
             current_house = 0
 
         name_house = houses_number[current_house]
-        self.activate_house(number, name_house)
+        self.activate_house(name_house)
         
     def help(self): 
         if self.get_url() == "https://richup.io/":
@@ -283,7 +280,7 @@ class Game:
         except:
             self.tts(random_give_up_not_in_game())
 
-    def join_game(self): 
+    def join_game(self):  # DONE
         if self.get_url() == "https://richup.io/":
             self.tts(random_create_room())
             return
@@ -296,10 +293,7 @@ class Game:
                 self.tts("Bem vindo ao sua sala")
                 time.sleep(2)
                 if self.button.join_game.text.lower() != 'join game':
-                    self.get_activate_house()
-                    if self.name_house == None:
-                        self.activate_house(houses_number[0])
-                    self.tts("Agora pode começar o jogo")
+                    self.activate_house(houses_number[0])
             else:
                 self.tts("Não é permitido entrar na sala, neste momento")
         except:
