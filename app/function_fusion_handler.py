@@ -82,12 +82,20 @@ def select_color_handler(game, command):
 def completed_handler(game):
     game.roll_dice()
     time.sleep(5)
-    if game.button.buy:
-        game.buy()
+    try:
+        if game.button.buy:
+            game.buy()
+    except:
+        game.tts("Não calhas-te em nenhuma propriedade, que eu possa comprar")
+    
     time.sleep(3)
-    if "roll" in game.button.roll_dice.text.lower():
+    while True:
         roll_dice_and_buy_house(game)
-    if "end" in game.button.end_turn.text.lower():
-        game.end_turn()
+        if game.button.end_turn:
+            game.end_turn()
+            break
+    game.tts("Não posso fazer mais nada")
+    time.sleep(3)
+    game.tts("Continua a jogar")
     
     
